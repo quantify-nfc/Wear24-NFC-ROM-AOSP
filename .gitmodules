@@ -1,0 +1,3 @@
+[submodule ".repo/manifests"]
+	path = .repo/manifests
+	url = https://android.googlesource.com/platform/manifest
