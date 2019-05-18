@@ -28,7 +28,21 @@ This repository has three main branches: `master`, `nfc` and `release`. These br
 
 ## Contributing
 
-Due to high file sizes, it is recommended to only clone the whole repository if necessary.
+
+### Cloning
+
+Due to high file sizes, it is recommended to only clone the whole repository if necessary. If you do plan on doing so, **use SSH and NOT HTTP**.
+
+To do so...
+1. Open the terminal
+2. Paste the following code, substituting your GitHub email: `ssh-keygen -t rsa -b 4096 -C "your_email@example.com"`
+3. When asked to choose the file location, press `ENTER` (accept the default location)
+4. Enter a secure passphrase (which you'll remember!)
+5. Start the `ssh-agent` (enter `eval "$(ssh-agent -s)"` into the console)
+6. Add your SSH key to `ssh-agent` (type `ssh-add ~/.ssh/id_rsa` and enter your passphrase when asked)
+7. [Add the SSH key to your GitHub account](https://help.github.com/en/articles/adding-a-new-ssh-key-to-your-github-account)
+
+### Pushing
 
 If you are planning on pushing large changes, it is recommended to change the following git config values:
 
