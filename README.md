@@ -41,7 +41,7 @@ To do so...
 5. Start the `ssh-agent` (enter `eval "$(ssh-agent -s)"` into the console)
 6. Add your SSH key to `ssh-agent` (type `ssh-add ~/.ssh/id_rsa` and enter your passphrase when asked)
 7. [Add the SSH key to your GitHub account](https://help.github.com/en/articles/adding-a-new-ssh-key-to-your-github-account)
-8. After, just clone the repo using `git clone git@github.com:quantify-nfc/Wear24-NFC-ROM-AOSP`
+8. After, just clone the repo using `git clone --recursive git@github.com:quantify-nfc/Wear24-NFC-ROM-AOSP`
 
 ### Pushing
 
