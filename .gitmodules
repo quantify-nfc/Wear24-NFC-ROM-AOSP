@@ -1544,3 +1544,6 @@
         path = tools/test/connectivity
         url = https://android.googlesource.com/platform/tools/test/connectivity
 
+[submodule "device/quanta/dorado"]
+	path = device/quanta/dorado
+	url = https://github.com/quantify-nfc/platform_device_quanta_dorado
