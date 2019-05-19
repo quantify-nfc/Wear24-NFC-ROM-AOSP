@@ -1,3 +1,36 @@
-[submodule ".repo/manifests"]
-	path = .repo/manifests
-	url = https://android.googlesource.com/platform/manifest
+[submodule "art"]
+	path = art
+	url = https://android.googlesource.com/platform/art/
+[submodule "bionic"]
+	path = bionic
+	url = https://android.googlesource.com/platform/bionic/
+[submodule "build"]
+	path = build
+	url = https://android.googlesource.com/platform/build
+[submodule "cts"]
+	path = cts
+	url = https://android.googlesource.com/platform/cts
+[submodule "dalvik"]
+	path = dalvik
+	url = https://android.googlesource.com/platform/dalvik
+[submodule "development"]
+	path = development
+	url = https://android.googlesource.com/platform/development
+[submodule "libcore"]
+	path = libcore
+	url = https://android.googlesource.com/platform/libcore
+[submodule "libnativehelper"]
+	path = libnativehelper
+	url = https://android.googlesource.com/platform/libnativehelper
+[submodule "ndk"]
+	path = ndk
+	url = https://android.googlesource.com/platform/ndk
+[submodule "pdk"]
+	path = pdk
+	url = https://android.googlesource.com/platform/pdk
+[submodule "platform_testing"]
+	path = platform_testing
+	url = https://android.googlesource.com/platform/platform_testing
+[submodule "sdk"]
+	path = sdk
+	url = https://android.googlesource.com/platform/sdk
