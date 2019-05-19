@@ -7,21 +7,18 @@
 [submodule "bootable/recovery"]
         path = bootable/recovery
         url = https://android.googlesource.com/platform/bootable/recovery
+[submodule "build"]
+        path = build
+        url = https://android.googlesource.com/platform/build
 [submodule "build/blueprint"]
         path = build/blueprint
         url = https://android.googlesource.com/platform/build/blueprint
 [submodule "build/kati"]
         path = build/kati
         url = https://android.googlesource.com/platform/build/kati
-[submodule "build/make"]
-        path = build/make
-        url = https://android.googlesource.com/platform/build/make
 [submodule "build/soong"]
         path = build/soong
         url = https://android.googlesource.com/platform/build/soong
-[submodule "compatibility/cdd"]
-        path = compatibility/cdd
-        url = https://android.googlesource.com/platform/compatibility/cdd
 [submodule "cts"]
         path = cts
         url = https://android.googlesource.com/platform/cts
@@ -40,6 +37,15 @@
 [submodule "development"]
         path = development
         url = https://android.googlesource.com/platform/development
+[submodule "device/asus/deb"]
+        path = device/asus/deb
+        url = https://android.googlesource.com/platform/device/asus/deb
+[submodule "device/asus/flo"]
+        path = device/asus/flo
+        url = https://android.googlesource.com/platform/device/asus/flo
+[submodule "device/asus/flo-kernel"]
+        path = device/asus/flo-kernel
+        url = https://android.googlesource.com/platform/device/asus/flo-kernel
 [submodule "device/asus/fugu"]
         path = device/asus/fugu
         url = https://android.googlesource.com/platform/device/asus/fugu
@@ -55,18 +61,12 @@
 [submodule "device/generic/armv7-a-neon"]
         path = device/generic/armv7-a-neon
         url = https://android.googlesource.com/platform/device/generic/armv7-a-neon
-[submodule "device/generic/car"]
-        path = device/generic/car
-        url = https://android.googlesource.com/platform/device/generic/car
 [submodule "device/generic/common"]
         path = device/generic/common
         url = https://android.googlesource.com/platform/device/generic/common
 [submodule "device/generic/goldfish"]
         path = device/generic/goldfish
         url = https://android.googlesource.com/platform/device/generic/goldfish
-[submodule "device/generic/goldfish-opengl"]
-        path = device/generic/goldfish-opengl
-        url = https://android.googlesource.com/platform/device/generic/goldfish-opengl
 [submodule "device/generic/mini-emulator-arm64"]
         path = device/generic/mini-emulator-arm64
         url = https://android.googlesource.com/platform/device/generic/mini-emulator-arm64
@@ -76,9 +76,6 @@
 [submodule "device/generic/mini-emulator-mips"]
         path = device/generic/mini-emulator-mips
         url = https://android.googlesource.com/platform/device/generic/mini-emulator-mips
-[submodule "device/generic/mini-emulator-mips64"]
-        path = device/generic/mini-emulator-mips64
-        url = https://android.googlesource.com/platform/device/generic/mini-emulator-mips64
 [submodule "device/generic/mini-emulator-x86"]
         path = device/generic/mini-emulator-x86
         url = https://android.googlesource.com/platform/device/generic/mini-emulator-x86
@@ -88,15 +85,9 @@
 [submodule "device/generic/mips"]
         path = device/generic/mips
         url = https://android.googlesource.com/platform/device/generic/mips
-[submodule "device/generic/mips64"]
-        path = device/generic/mips64
-        url = https://android.googlesource.com/platform/device/generic/mips64
 [submodule "device/generic/qemu"]
         path = device/generic/qemu
         url = https://android.googlesource.com/platform/device/generic/qemu
-[submodule "device/generic/uml"]
-        path = device/generic/uml
-        url = https://android.googlesource.com/platform/device/generic/uml
 [submodule "device/generic/x86"]
         path = device/generic/x86
         url = https://android.googlesource.com/platform/device/generic/x86
@@ -115,33 +106,12 @@
 [submodule "device/google/contexthub"]
         path = device/google/contexthub
         url = https://android.googlesource.com/platform/device/google/contexthub
-[submodule "device/google/dragon"]
-        path = device/google/dragon
-        url = https://android.googlesource.com/platform/device/google/dragon
-[submodule "device/google/dragon-kernel"]
-        path = device/google/dragon-kernel
-        url = https://android.googlesource.com/platform/device/google/dragon-kernel
-[submodule "device/google/marlin"]
-        path = device/google/marlin
-        url = https://android.googlesource.com/platform/device/google/marlin
-[submodule "device/google/marlin-kernel"]
-        path = device/google/marlin-kernel
-        url = https://android.googlesource.com/platform/device/google/marlin-kernel
-[submodule "device/google/muskie"]
-        path = device/google/muskie
-        url = https://android.googlesource.com/platform/device/google/muskie
-[submodule "device/google/taimen"]
-        path = device/google/taimen
-        url = https://android.googlesource.com/platform/device/google/taimen
-[submodule "device/google/vrservices"]
-        path = device/google/vrservices
-        url = https://android.googlesource.com/platform/device/google/vrservices
-[submodule "device/google/wahoo"]
-        path = device/google/wahoo
-        url = https://android.googlesource.com/platform/device/google/wahoo
-[submodule "device/google/wahoo-kernel"]
-        path = device/google/wahoo-kernel
-        url = https://android.googlesource.com/platform/device/google/wahoo-kernel
+[submodule "device/htc/flounder"]
+        path = device/htc/flounder
+        url = https://android.googlesource.com/platform/device/htc/flounder
+[submodule "device/htc/flounder-kernel"]
+        path = device/htc/flounder-kernel
+        url = https://android.googlesource.com/platform/device/htc/flounder-kernel
 [submodule "device/huawei/angler"]
         path = device/huawei/angler
         url = https://android.googlesource.com/platform/device/huawei/angler
@@ -154,6 +124,12 @@
 [submodule "device/lge/bullhead-kernel"]
         path = device/lge/bullhead-kernel
         url = https://android.googlesource.com/platform/device/lge/bullhead-kernel
+[submodule "device/lge/hammerhead"]
+        path = device/lge/hammerhead
+        url = https://android.googlesource.com/platform/device/lge/hammerhead
+[submodule "device/lge/hammerhead-kernel"]
+        path = device/lge/hammerhead-kernel
+        url = https://android.googlesource.com/platform/device/lge/hammerhead-kernel
 [submodule "device/linaro/bootloader/OpenPlatformPkg"]
         path = device/linaro/bootloader/OpenPlatformPkg
         url = https://android.googlesource.com/platform/device/linaro/bootloader/OpenPlatformPkg
@@ -169,27 +145,21 @@
 [submodule "device/linaro/hikey-kernel"]
         path = device/linaro/hikey-kernel
         url = https://android.googlesource.com/platform/device/linaro/hikey-kernel
+[submodule "device/moto/shamu"]
+        path = device/moto/shamu
+        url = https://android.googlesource.com/platform/device/moto/shamu
+[submodule "device/moto/shamu-kernel"]
+        path = device/moto/shamu-kernel
+        url = https://android.googlesource.com/platform/device/moto/shamu-kernel
 [submodule "device/sample"]
         path = device/sample
         url = https://android.googlesource.com/platform/device/sample
 [submodule "docs/source.android.com"]
         path = docs/source.android.com
         url = https://android.googlesource.com/platform/docs/source.android.com
-[submodule "external/ImageMagick"]
-        path = external/ImageMagick
-        url = https://android.googlesource.com/platform/external/ImageMagick
-[submodule "external/Microsoft-GSL"]
-        path = external/Microsoft-GSL
-        url = https://android.googlesource.com/platform/external/Microsoft-GSL
 [submodule "external/aac"]
         path = external/aac
         url = https://android.googlesource.com/platform/external/aac
-[submodule "external/abi-compliance-checker"]
-        path = external/abi-compliance-checker
-        url = https://android.googlesource.com/platform/external/abi-compliance-checker
-[submodule "external/abi-dumper"]
-        path = external/abi-dumper
-        url = https://android.googlesource.com/platform/external/abi-dumper
 [submodule "external/android-clat"]
         path = external/android-clat
         url = https://android.googlesource.com/platform/external/android-clat
@@ -214,21 +184,12 @@
 [submodule "external/apache-xml"]
         path = external/apache-xml
         url = https://android.googlesource.com/platform/external/apache-xml
-[submodule "external/archive-patcher"]
-        path = external/archive-patcher
-        url = https://android.googlesource.com/platform/external/archive-patcher
-[submodule "external/arm-neon-tests"]
-        path = external/arm-neon-tests
-        url = https://android.googlesource.com/platform/external/arm-neon-tests
 [submodule "external/autotest"]
         path = external/autotest
         url = https://android.googlesource.com/platform/external/autotest
-[submodule "external/avb"]
-        path = external/avb
-        url = https://android.googlesource.com/platform/external/avb
-[submodule "external/bart"]
-        path = external/bart
-        url = https://android.googlesource.com/platform/external/bart
+[submodule "external/avahi"]
+        path = external/avahi
+        url = https://android.googlesource.com/platform/external/avahi
 [submodule "external/bison"]
         path = external/bison
         url = https://android.googlesource.com/platform/external/bison
@@ -241,9 +202,6 @@
 [submodule "external/bouncycastle"]
         path = external/bouncycastle
         url = https://android.googlesource.com/platform/external/bouncycastle
-[submodule "external/brotli"]
-        path = external/brotli
-        url = https://android.googlesource.com/platform/external/brotli
 [submodule "external/bsdiff"]
         path = external/bsdiff
         url = https://android.googlesource.com/platform/external/bsdiff
@@ -259,6 +217,9 @@
 [submodule "external/cblas"]
         path = external/cblas
         url = https://android.googlesource.com/platform/external/cblas
+[submodule "external/ceres-solver"]
+        path = external/ceres-solver
+        url = https://android.googlesource.com/platform/external/ceres-solver
 [submodule "external/chromium-libpac"]
         path = external/chromium-libpac
         url = https://android.googlesource.com/platform/external/chromium-libpac
@@ -292,18 +253,21 @@
 [submodule "external/dagger2"]
         path = external/dagger2
         url = https://android.googlesource.com/platform/external/dagger2
+[submodule "external/dbus"]
+        path = external/dbus
+        url = https://android.googlesource.com/platform/external/dbus
+[submodule "external/dbus-binding-generator"]
+        path = external/dbus-binding-generator
+        url = https://android.googlesource.com/platform/external/dbus-binding-generator
 [submodule "external/deqp"]
         path = external/deqp
         url = https://android.googlesource.com/platform/external/deqp
-[submodule "external/desugar"]
-        path = external/desugar
-        url = https://android.googlesource.com/platform/external/desugar
-[submodule "external/devlib"]
-        path = external/devlib
-        url = https://android.googlesource.com/platform/external/devlib
 [submodule "external/dexmaker"]
         path = external/dexmaker
         url = https://android.googlesource.com/platform/external/dexmaker
+[submodule "external/dhcpcd"]
+        path = external/dhcpcd
+        url = https://android.googlesource.com/platform/external/dhcpcd
 [submodule "external/dhcpcd-6.8.2"]
         path = external/dhcpcd-6.8.2
         url = https://android.googlesource.com/platform/external/dhcpcd-6.8.2
@@ -322,15 +286,15 @@
 [submodule "external/donuts"]
         path = external/donuts
         url = https://android.googlesource.com/platform/external/donuts
+[submodule "external/drm_gralloc"]
+        path = external/drm_gralloc
+        url = https://android.googlesource.com/platform/external/drm_gralloc
 [submodule "external/drm_hwcomposer"]
         path = external/drm_hwcomposer
         url = https://android.googlesource.com/platform/external/drm_hwcomposer
 [submodule "external/droiddriver"]
         path = external/droiddriver
         url = https://android.googlesource.com/platform/external/droiddriver
-[submodule "external/drrickorang"]
-        path = external/drrickorang
-        url = https://android.googlesource.com/platform/external/drrickorang
 [submodule "external/dtc"]
         path = external/dtc
         url = https://android.googlesource.com/platform/external/dtc
@@ -340,6 +304,12 @@
 [submodule "external/easymock"]
         path = external/easymock
         url = https://android.googlesource.com/platform/external/easymock
+[submodule "external/eclipse-basebuilder"]
+        path = external/eclipse-basebuilder
+        url = https://android.googlesource.com/platform/external/eclipse-basebuilder
+[submodule "external/eclipse-windowbuilder"]
+        path = external/eclipse-windowbuilder
+        url = https://android.googlesource.com/platform/external/eclipse-windowbuilder
 [submodule "external/eigen"]
         path = external/eigen
         url = https://android.googlesource.com/platform/external/eigen
@@ -373,12 +343,6 @@
 [submodule "external/flac"]
         path = external/flac
         url = https://android.googlesource.com/platform/external/flac
-[submodule "external/flatbuffers"]
-        path = external/flatbuffers
-        url = https://android.googlesource.com/platform/external/flatbuffers
-[submodule "external/fmtlib"]
-        path = external/fmtlib
-        url = https://android.googlesource.com/platform/external/fmtlib
 [submodule "external/fonttools"]
         path = external/fonttools
         url = https://android.googlesource.com/platform/external/fonttools
@@ -397,9 +361,9 @@
 [submodule "external/glide"]
         path = external/glide
         url = https://android.googlesource.com/platform/external/glide
-[submodule "external/google-api-services-storage"]
-        path = external/google-api-services-storage
-        url = https://android.googlesource.com/platform/external/google-api-services-storage
+[submodule "external/gmock"]
+        path = external/gmock
+        url = https://android.googlesource.com/platform/external/gmock
 [submodule "external/google-benchmark"]
         path = external/google-benchmark
         url = https://android.googlesource.com/platform/external/google-benchmark
@@ -427,6 +391,9 @@
 [submodule "external/gptfdisk"]
         path = external/gptfdisk
         url = https://android.googlesource.com/platform/external/gptfdisk
+[submodule "external/gtest"]
+        path = external/gtest
+        url = https://android.googlesource.com/platform/external/gtest
 [submodule "external/guava"]
         path = external/guava
         url = https://android.googlesource.com/platform/external/guava
@@ -445,9 +412,6 @@
 [submodule "external/icu"]
         path = external/icu
         url = https://android.googlesource.com/platform/external/icu
-[submodule "external/ims"]
-        path = external/ims
-        url = https://android.googlesource.com/platform/external/ims
 [submodule "external/iproute2"]
         path = external/iproute2
         url = https://android.googlesource.com/platform/external/iproute2
@@ -484,12 +448,18 @@
 [submodule "external/jemalloc"]
         path = external/jemalloc
         url = https://android.googlesource.com/platform/external/jemalloc
-[submodule "external/jline"]
-        path = external/jline
-        url = https://android.googlesource.com/platform/external/jline
+[submodule "external/jetty"]
+        path = external/jetty
+        url = https://android.googlesource.com/platform/external/jetty
+[submodule "external/jhead"]
+        path = external/jhead
+        url = https://android.googlesource.com/platform/external/jhead
 [submodule "external/jmdns"]
         path = external/jmdns
         url = https://android.googlesource.com/platform/external/jmdns
+[submodule "external/jpeg"]
+        path = external/jpeg
+        url = https://android.googlesource.com/platform/external/jpeg
 [submodule "external/jsilver"]
         path = external/jsilver
         url = https://android.googlesource.com/platform/external/jsilver
@@ -508,24 +478,15 @@
 [submodule "external/junit"]
         path = external/junit
         url = https://android.googlesource.com/platform/external/junit
-[submodule "external/junit-params"]
-        path = external/junit-params
-        url = https://android.googlesource.com/platform/external/junit-params
 [submodule "external/kernel-headers"]
         path = external/kernel-headers
         url = https://android.googlesource.com/platform/external/kernel-headers
-[submodule "external/kmod"]
-        path = external/kmod
-        url = https://android.googlesource.com/platform/external/kmod
 [submodule "external/ksoap2"]
         path = external/ksoap2
         url = https://android.googlesource.com/platform/external/ksoap2
 [submodule "external/libavc"]
         path = external/libavc
         url = https://android.googlesource.com/platform/external/libavc
-[submodule "external/libbackup"]
-        path = external/libbackup
-        url = https://android.googlesource.com/platform/external/libbackup
 [submodule "external/libbrillo"]
         path = external/libbrillo
         url = https://android.googlesource.com/platform/external/libbrillo
@@ -541,9 +502,6 @@
 [submodule "external/libconstrainedcrypto"]
         path = external/libconstrainedcrypto
         url = https://android.googlesource.com/platform/external/libconstrainedcrypto
-[submodule "external/libcups"]
-        path = external/libcups
-        url = https://android.googlesource.com/platform/external/libcups
 [submodule "external/libcxx"]
         path = external/libcxx
         url = https://android.googlesource.com/platform/external/libcxx
@@ -562,9 +520,6 @@
 [submodule "external/libedit"]
         path = external/libedit
         url = https://android.googlesource.com/platform/external/libedit
-[submodule "external/libese"]
-        path = external/libese
-        url = https://android.googlesource.com/platform/external/libese
 [submodule "external/libevent"]
         path = external/libevent
         url = https://android.googlesource.com/platform/external/libevent
@@ -577,12 +532,6 @@
 [submodule "external/libhevc"]
         path = external/libhevc
         url = https://android.googlesource.com/platform/external/libhevc
-[submodule "external/libjpeg-turbo"]
-        path = external/libjpeg-turbo
-        url = https://android.googlesource.com/platform/external/libjpeg-turbo
-[submodule "external/libldac"]
-        path = external/libldac
-        url = https://android.googlesource.com/platform/external/libldac
 [submodule "external/liblzf"]
         path = external/liblzf
         url = https://android.googlesource.com/platform/external/liblzf
@@ -598,12 +547,12 @@
 [submodule "external/libmtp"]
         path = external/libmtp
         url = https://android.googlesource.com/platform/external/libmtp
-[submodule "external/libnetfilter_conntrack"]
-        path = external/libnetfilter_conntrack
-        url = https://android.googlesource.com/platform/external/libnetfilter_conntrack
-[submodule "external/libnfnetlink"]
-        path = external/libnfnetlink
-        url = https://android.googlesource.com/platform/external/libnfnetlink
+[submodule "external/libnfc-nci"]
+        path = external/libnfc-nci
+        url = https://android.googlesource.com/platform/external/libnfc-nci
+[submodule "external/libnfc-nxp"]
+        path = external/libnfc-nxp
+        url = https://android.googlesource.com/platform/external/libnfc-nxp
 [submodule "external/libnl"]
         path = external/libnl
         url = https://android.googlesource.com/platform/external/libnl
@@ -622,9 +571,9 @@
 [submodule "external/libpng"]
         path = external/libpng
         url = https://android.googlesource.com/platform/external/libpng
-[submodule "external/libtextclassifier"]
-        path = external/libtextclassifier
-        url = https://android.googlesource.com/platform/external/libtextclassifier
+[submodule "external/libselinux"]
+        path = external/libselinux
+        url = https://android.googlesource.com/platform/external/libselinux
 [submodule "external/libunwind"]
         path = external/libunwind
         url = https://android.googlesource.com/platform/external/libunwind
@@ -637,6 +586,9 @@
 [submodule "external/libusb-compat"]
         path = external/libusb-compat
         url = https://android.googlesource.com/platform/external/libusb-compat
+[submodule "external/libutf"]
+        path = external/libutf
+        url = https://android.googlesource.com/platform/external/libutf
 [submodule "external/libvncserver"]
         path = external/libvncserver
         url = https://android.googlesource.com/platform/external/libvncserver
@@ -649,18 +601,15 @@
 [submodule "external/libvterm"]
         path = external/libvterm
         url = https://android.googlesource.com/platform/external/libvterm
+[submodule "external/libweave"]
+        path = external/libweave
+        url = https://android.googlesource.com/platform/external/libweave
 [submodule "external/libxml2"]
         path = external/libxml2
         url = https://android.googlesource.com/platform/external/libxml2
 [submodule "external/libyuv"]
         path = external/libyuv
         url = https://android.googlesource.com/platform/external/libyuv
-[submodule "external/linux-kselftest"]
-        path = external/linux-kselftest
-        url = https://android.googlesource.com/platform/external/linux-kselftest
-[submodule "external/lisa"]
-        path = external/lisa
-        url = https://android.googlesource.com/platform/external/lisa
 [submodule "external/littlemock"]
         path = external/littlemock
         url = https://android.googlesource.com/platform/external/littlemock
@@ -670,18 +619,18 @@
 [submodule "external/llvm"]
         path = external/llvm
         url = https://android.googlesource.com/platform/external/llvm
-[submodule "external/lmfit"]
-        path = external/lmfit
-        url = https://android.googlesource.com/platform/external/lmfit
-[submodule "external/ltp"]
-        path = external/ltp
-        url = https://android.googlesource.com/platform/external/ltp
+[submodule "external/ltrace"]
+        path = external/ltrace
+        url = https://android.googlesource.com/platform/external/ltrace
 [submodule "external/lz4"]
         path = external/lz4
         url = https://android.googlesource.com/platform/external/lz4
 [submodule "external/lzma"]
         path = external/lzma
         url = https://android.googlesource.com/platform/external/lzma
+[submodule "external/marisa-trie"]
+        path = external/marisa-trie
+        url = https://android.googlesource.com/platform/external/marisa-trie
 [submodule "external/markdown"]
         path = external/markdown
         url = https://android.googlesource.com/platform/external/markdown
@@ -763,9 +712,9 @@
 [submodule "external/opencv"]
         path = external/opencv
         url = https://android.googlesource.com/platform/external/opencv
-[submodule "external/openssh"]
-        path = external/openssh
-        url = https://android.googlesource.com/platform/external/openssh
+[submodule "external/opencv3"]
+        path = external/opencv3
+        url = https://android.googlesource.com/platform/external/opencv3
 [submodule "external/owasp/sanitizer"]
         path = external/owasp/sanitizer
         url = https://android.googlesource.com/platform/external/owasp/sanitizer
@@ -781,9 +730,6 @@
 [submodule "external/piex"]
         path = external/piex
         url = https://android.googlesource.com/platform/external/piex
-[submodule "external/ply"]
-        path = external/ply
-        url = https://android.googlesource.com/platform/external/ply
 [submodule "external/ppp"]
         path = external/ppp
         url = https://android.googlesource.com/platform/external/ppp
@@ -793,15 +739,6 @@
 [submodule "external/protobuf"]
         path = external/protobuf
         url = https://android.googlesource.com/platform/external/protobuf
-[submodule "external/python/cpython2"]
-        path = external/python/cpython2
-        url = https://android.googlesource.com/platform/external/python/cpython2
-[submodule "external/python/cpython3"]
-        path = external/python/cpython3
-        url = https://android.googlesource.com/platform/external/python/cpython3
-[submodule "external/r8"]
-        path = external/r8
-        url = https://android.googlesource.com/platform/external/r8
 [submodule "external/regex-re2"]
         path = external/regex-re2
         url = https://android.googlesource.com/platform/external/regex-re2
@@ -862,30 +799,21 @@
 [submodule "external/speex"]
         path = external/speex
         url = https://android.googlesource.com/platform/external/speex
-[submodule "external/spirv-llvm"]
-        path = external/spirv-llvm
-        url = https://android.googlesource.com/platform/external/spirv-llvm
 [submodule "external/sqlite"]
         path = external/sqlite
         url = https://android.googlesource.com/platform/external/sqlite
 [submodule "external/squashfs-tools"]
         path = external/squashfs-tools
         url = https://android.googlesource.com/platform/external/squashfs-tools
+[submodule "external/srtp"]
+        path = external/srtp
+        url = https://android.googlesource.com/platform/external/srtp
 [submodule "external/strace"]
         path = external/strace
         url = https://android.googlesource.com/platform/external/strace
-[submodule "external/stressapptest"]
-        path = external/stressapptest
-        url = https://android.googlesource.com/platform/external/stressapptest
 [submodule "external/svox"]
         path = external/svox
         url = https://android.googlesource.com/platform/external/svox
-[submodule "external/swiftshader"]
-        path = external/swiftshader
-        url = https://android.googlesource.com/platform/external/swiftshader
-[submodule "external/syslinux"]
-        path = external/syslinux
-        url = https://android.googlesource.com/platform/external/syslinux
 [submodule "external/tagsoup"]
         path = external/tagsoup
         url = https://android.googlesource.com/platform/external/tagsoup
@@ -910,30 +838,18 @@
 [submodule "external/tinyxml2"]
         path = external/tinyxml2
         url = https://android.googlesource.com/platform/external/tinyxml2
-[submodule "external/toolchain-utils"]
-        path = external/toolchain-utils
-        url = https://android.googlesource.com/platform/external/toolchain-utils
+[submodule "external/tlsdate"]
+        path = external/tlsdate
+        url = https://android.googlesource.com/platform/external/tlsdate
 [submodule "external/toybox"]
         path = external/toybox
         url = https://android.googlesource.com/platform/external/toybox
 [submodule "external/tpm2"]
         path = external/tpm2
         url = https://android.googlesource.com/platform/external/tpm2
-[submodule "external/trappy"]
-        path = external/trappy
-        url = https://android.googlesource.com/platform/external/trappy
 [submodule "external/tremolo"]
         path = external/tremolo
         url = https://android.googlesource.com/platform/external/tremolo
-[submodule "external/unicode"]
-        path = external/unicode
-        url = https://android.googlesource.com/platform/external/unicode
-[submodule "external/universal-tween-engine"]
-        path = external/universal-tween-engine
-        url = https://android.googlesource.com/platform/external/universal-tween-engine
-[submodule "external/v4l2_codec2"]
-        path = external/v4l2_codec2
-        url = https://android.googlesource.com/platform/external/v4l2_codec2
 [submodule "external/v8"]
         path = external/v8
         url = https://android.googlesource.com/platform/external/v8
@@ -949,15 +865,9 @@
 [submodule "external/vogar"]
         path = external/vogar
         url = https://android.googlesource.com/platform/external/vogar
-[submodule "external/volley"]
-        path = external/volley
-        url = https://android.googlesource.com/platform/external/volley
 [submodule "external/vulkan-validation-layers"]
         path = external/vulkan-validation-layers
         url = https://android.googlesource.com/platform/external/vulkan-validation-layers
-[submodule "external/walt"]
-        path = external/walt
-        url = https://android.googlesource.com/platform/external/walt
 [submodule "external/webp"]
         path = external/webp
         url = https://android.googlesource.com/platform/external/webp
@@ -967,12 +877,6 @@
 [submodule "external/wpa_supplicant_8"]
         path = external/wpa_supplicant_8
         url = https://android.googlesource.com/platform/external/wpa_supplicant_8
-[submodule "external/wycheproof"]
-        path = external/wycheproof
-        url = https://android.googlesource.com/platform/external/wycheproof
-[submodule "external/x264"]
-        path = external/x264
-        url = https://android.googlesource.com/platform/external/x264
 [submodule "external/xmlrpcpp"]
         path = external/xmlrpcpp
         url = https://android.googlesource.com/platform/external/xmlrpcpp
@@ -982,9 +886,6 @@
 [submodule "external/xmp_toolkit"]
         path = external/xmp_toolkit
         url = https://android.googlesource.com/platform/external/xmp_toolkit
-[submodule "external/xz-embedded"]
-        path = external/xz-embedded
-        url = https://android.googlesource.com/platform/external/xz-embedded
 [submodule "external/zlib"]
         path = external/zlib
         url = https://android.googlesource.com/platform/external/zlib
@@ -1015,12 +916,6 @@
 [submodule "frameworks/ex"]
         path = frameworks/ex
         url = https://android.googlesource.com/platform/frameworks/ex
-[submodule "frameworks/hardware/interfaces"]
-        path = frameworks/hardware/interfaces
-        url = https://android.googlesource.com/platform/frameworks/hardware/interfaces
-[submodule "frameworks/layoutlib"]
-        path = frameworks/layoutlib
-        url = https://android.googlesource.com/platform/frameworks/layoutlib
 [submodule "frameworks/minikin"]
         path = frameworks/minikin
         url = https://android.googlesource.com/platform/frameworks/minikin
@@ -1051,6 +946,9 @@
 [submodule "frameworks/opt/datetimepicker"]
         path = frameworks/opt/datetimepicker
         url = https://android.googlesource.com/platform/frameworks/opt/datetimepicker
+[submodule "frameworks/opt/emoji"]
+        path = frameworks/opt/emoji
+        url = https://android.googlesource.com/platform/frameworks/opt/emoji
 [submodule "frameworks/opt/inputconnectioncommon"]
         path = frameworks/opt/inputconnectioncommon
         url = https://android.googlesource.com/platform/frameworks/opt/inputconnectioncommon
@@ -1063,9 +961,6 @@
 [submodule "frameworks/opt/net/ims"]
         path = frameworks/opt/net/ims
         url = https://android.googlesource.com/platform/frameworks/opt/net/ims
-[submodule "frameworks/opt/net/lowpan"]
-        path = frameworks/opt/net/lowpan
-        url = https://android.googlesource.com/platform/frameworks/opt/net/lowpan
 [submodule "frameworks/opt/net/voip"]
         path = frameworks/opt/net/voip
         url = https://android.googlesource.com/platform/frameworks/opt/net/voip
@@ -1093,6 +988,9 @@
 [submodule "frameworks/support"]
         path = frameworks/support
         url = https://android.googlesource.com/platform/frameworks/support
+[submodule "frameworks/volley"]
+        path = frameworks/volley
+        url = https://android.googlesource.com/platform/frameworks/volley
 [submodule "frameworks/webview"]
         path = frameworks/webview
         url = https://android.googlesource.com/platform/frameworks/webview
@@ -1108,12 +1006,6 @@
 [submodule "hardware/broadcom/wlan"]
         path = hardware/broadcom/wlan
         url = https://android.googlesource.com/platform/hardware/broadcom/wlan
-[submodule "hardware/google/apf"]
-        path = hardware/google/apf
-        url = https://android.googlesource.com/platform/hardware/google/apf
-[submodule "hardware/google/easel"]
-        path = hardware/google/easel
-        url = https://android.googlesource.com/platform/hardware/google/easel
 [submodule "hardware/intel/audio_media"]
         path = hardware/intel/audio_media
         url = https://android.googlesource.com/platform/hardware/intel/audio_media
@@ -1156,9 +1048,6 @@
 [submodule "hardware/intel/sensors"]
         path = hardware/intel/sensors
         url = https://android.googlesource.com/platform/hardware/intel/sensors
-[submodule "hardware/interfaces"]
-        path = hardware/interfaces
-        url = https://android.googlesource.com/platform/hardware/interfaces
 [submodule "hardware/invensense"]
         path = hardware/invensense
         url = https://android.googlesource.com/platform/hardware/invensense
@@ -1171,21 +1060,18 @@
 [submodule "hardware/marvell/bt"]
         path = hardware/marvell/bt
         url = https://android.googlesource.com/platform/hardware/marvell/bt
+[submodule "hardware/mediatek"]
+        path = hardware/mediatek
+        url = https://android.googlesource.com/platform/hardware/mediatek
 [submodule "hardware/qcom/audio"]
         path = hardware/qcom/audio
         url = https://android.googlesource.com/platform/hardware/qcom/audio
-[submodule "hardware/qcom/bootctrl"]
-        path = hardware/qcom/bootctrl
-        url = https://android.googlesource.com/platform/hardware/qcom/bootctrl
 [submodule "hardware/qcom/bt"]
         path = hardware/qcom/bt
         url = https://android.googlesource.com/platform/hardware/qcom/bt
 [submodule "hardware/qcom/camera"]
         path = hardware/qcom/camera
         url = https://android.googlesource.com/platform/hardware/qcom/camera
-[submodule "hardware/qcom/data/ipacfg-mgr"]
-        path = hardware/qcom/data/ipacfg-mgr
-        url = https://android.googlesource.com/platform/hardware/qcom/data/ipacfg-mgr
 [submodule "hardware/qcom/display"]
         path = hardware/qcom/display
         url = https://android.googlesource.com/platform/hardware/qcom/display
@@ -1204,21 +1090,15 @@
 [submodule "hardware/qcom/msm8994"]
         path = hardware/qcom/msm8994
         url = https://android.googlesource.com/platform/hardware/qcom/msm8994
-[submodule "hardware/qcom/msm8996"]
-        path = hardware/qcom/msm8996
-        url = https://android.googlesource.com/platform/hardware/qcom/msm8996
-[submodule "hardware/qcom/msm8998"]
-        path = hardware/qcom/msm8998
-        url = https://android.googlesource.com/platform/hardware/qcom/msm8998
-[submodule "hardware/qcom/msm8x09"]
-        path = hardware/qcom/msm8x09
-        url = https://android.googlesource.com/platform/hardware/qcom/msm8x09
 [submodule "hardware/qcom/msm8x26"]
         path = hardware/qcom/msm8x26
         url = https://android.googlesource.com/platform/hardware/qcom/msm8x26
 [submodule "hardware/qcom/msm8x27"]
         path = hardware/qcom/msm8x27
         url = https://android.googlesource.com/platform/hardware/qcom/msm8x27
+[submodule "hardware/qcom/msm8x74"]
+        path = hardware/qcom/msm8x74
+        url = https://android.googlesource.com/platform/hardware/qcom/msm8x74
 [submodule "hardware/qcom/msm8x84"]
         path = hardware/qcom/msm8x84
         url = https://android.googlesource.com/platform/hardware/qcom/msm8x84
@@ -1231,6 +1111,15 @@
 [submodule "hardware/ril"]
         path = hardware/ril
         url = https://android.googlesource.com/platform/hardware/ril
+[submodule "hardware/ti/omap3"]
+        path = hardware/ti/omap3
+        url = https://android.googlesource.com/platform/hardware/ti/omap3
+[submodule "hardware/ti/omap4-aah"]
+        path = hardware/ti/omap4-aah
+        url = https://android.googlesource.com/platform/hardware/ti/omap4-aah
+[submodule "hardware/ti/omap4xxx"]
+        path = hardware/ti/omap4xxx
+        url = https://android.googlesource.com/platform/hardware/ti/omap4xxx
 [submodule "kernel/tests"]
         path = kernel/tests
         url = https://android.googlesource.com/platform/kernel/tests
@@ -1240,6 +1129,9 @@
 [submodule "libnativehelper"]
         path = libnativehelper
         url = https://android.googlesource.com/platform/libnativehelper
+[submodule "ndk"]
+        path = ndk
+        url = https://android.googlesource.com/platform/ndk
 [submodule "packages/apps/BasicSmsReceiver"]
         path = packages/apps/BasicSmsReceiver
         url = https://android.googlesource.com/platform/packages/apps/BasicSmsReceiver
@@ -1249,54 +1141,18 @@
 [submodule "packages/apps/Browser2"]
         path = packages/apps/Browser2
         url = https://android.googlesource.com/platform/packages/apps/Browser2
+[submodule "packages/apps/Calculator"]
+        path = packages/apps/Calculator
+        url = https://android.googlesource.com/platform/packages/apps/Calculator
 [submodule "packages/apps/Calendar"]
         path = packages/apps/Calendar
         url = https://android.googlesource.com/platform/packages/apps/Calendar
+[submodule "packages/apps/Camera"]
+        path = packages/apps/Camera
+        url = https://android.googlesource.com/platform/packages/apps/Camera
 [submodule "packages/apps/Camera2"]
         path = packages/apps/Camera2
         url = https://android.googlesource.com/platform/packages/apps/Camera2
-[submodule "packages/apps/Car/Dialer"]
-        path = packages/apps/Car/Dialer
-        url = https://android.googlesource.com/platform/packages/apps/Car/Dialer
-[submodule "packages/apps/Car/Hvac"]
-        path = packages/apps/Car/Hvac
-        url = https://android.googlesource.com/platform/packages/apps/Car/Hvac
-[submodule "packages/apps/Car/LatinIME"]
-        path = packages/apps/Car/LatinIME
-        url = https://android.googlesource.com/platform/packages/apps/Car/LatinIME
-[submodule "packages/apps/Car/LensPicker"]
-        path = packages/apps/Car/LensPicker
-        url = https://android.googlesource.com/platform/packages/apps/Car/LensPicker
-[submodule "packages/apps/Car/LocalMediaPlayer"]
-        path = packages/apps/Car/LocalMediaPlayer
-        url = https://android.googlesource.com/platform/packages/apps/Car/LocalMediaPlayer
-[submodule "packages/apps/Car/Media"]
-        path = packages/apps/Car/Media
-        url = https://android.googlesource.com/platform/packages/apps/Car/Media
-[submodule "packages/apps/Car/Messenger"]
-        path = packages/apps/Car/Messenger
-        url = https://android.googlesource.com/platform/packages/apps/Car/Messenger
-[submodule "packages/apps/Car/Overview"]
-        path = packages/apps/Car/Overview
-        url = https://android.googlesource.com/platform/packages/apps/Car/Overview
-[submodule "packages/apps/Car/Radio"]
-        path = packages/apps/Car/Radio
-        url = https://android.googlesource.com/platform/packages/apps/Car/Radio
-[submodule "packages/apps/Car/Settings"]
-        path = packages/apps/Car/Settings
-        url = https://android.googlesource.com/platform/packages/apps/Car/Settings
-[submodule "packages/apps/Car/Stream"]
-        path = packages/apps/Car/Stream
-        url = https://android.googlesource.com/platform/packages/apps/Car/Stream
-[submodule "packages/apps/Car/SystemUpdater"]
-        path = packages/apps/Car/SystemUpdater
-        url = https://android.googlesource.com/platform/packages/apps/Car/SystemUpdater
-[submodule "packages/apps/Car/UserManagement"]
-        path = packages/apps/Car/UserManagement
-        url = https://android.googlesource.com/platform/packages/apps/Car/UserManagement
-[submodule "packages/apps/Car/libs"]
-        path = packages/apps/Car/libs
-        url = https://android.googlesource.com/platform/packages/apps/Car/libs
 [submodule "packages/apps/CarrierConfig"]
         path = packages/apps/CarrierConfig
         url = https://android.googlesource.com/platform/packages/apps/CarrierConfig
@@ -1309,18 +1165,15 @@
 [submodule "packages/apps/Contacts"]
         path = packages/apps/Contacts
         url = https://android.googlesource.com/platform/packages/apps/Contacts
+[submodule "packages/apps/ContactsCommon"]
+        path = packages/apps/ContactsCommon
+        url = https://android.googlesource.com/platform/packages/apps/ContactsCommon
 [submodule "packages/apps/DeskClock"]
         path = packages/apps/DeskClock
         url = https://android.googlesource.com/platform/packages/apps/DeskClock
-[submodule "packages/apps/DevCamera"]
-        path = packages/apps/DevCamera
-        url = https://android.googlesource.com/platform/packages/apps/DevCamera
 [submodule "packages/apps/Dialer"]
         path = packages/apps/Dialer
         url = https://android.googlesource.com/platform/packages/apps/Dialer
-[submodule "packages/apps/DocumentsUI"]
-        path = packages/apps/DocumentsUI
-        url = https://android.googlesource.com/platform/packages/apps/DocumentsUI
 [submodule "packages/apps/Email"]
         path = packages/apps/Email
         url = https://android.googlesource.com/platform/packages/apps/Email
@@ -1330,6 +1183,12 @@
 [submodule "packages/apps/ExactCalculator"]
         path = packages/apps/ExactCalculator
         url = https://android.googlesource.com/platform/packages/apps/ExactCalculator
+[submodule "packages/apps/Exchange"]
+        path = packages/apps/Exchange
+        url = https://android.googlesource.com/platform/packages/apps/Exchange
+[submodule "packages/apps/FMRadio"]
+        path = packages/apps/FMRadio
+        url = https://android.googlesource.com/platform/packages/apps/FMRadio
 [submodule "packages/apps/Gallery"]
         path = packages/apps/Gallery
         url = https://android.googlesource.com/platform/packages/apps/Gallery
@@ -1339,6 +1198,9 @@
 [submodule "packages/apps/HTMLViewer"]
         path = packages/apps/HTMLViewer
         url = https://android.googlesource.com/platform/packages/apps/HTMLViewer
+[submodule "packages/apps/InCallUI"]
+        path = packages/apps/InCallUI
+        url = https://android.googlesource.com/platform/packages/apps/InCallUI
 [submodule "packages/apps/KeyChain"]
         path = packages/apps/KeyChain
         url = https://android.googlesource.com/platform/packages/apps/KeyChain
@@ -1372,6 +1234,9 @@
 [submodule "packages/apps/PackageInstaller"]
         path = packages/apps/PackageInstaller
         url = https://android.googlesource.com/platform/packages/apps/PackageInstaller
+[submodule "packages/apps/Phone"]
+        path = packages/apps/Phone
+        url = https://android.googlesource.com/platform/packages/apps/Phone
 [submodule "packages/apps/PhoneCommon"]
         path = packages/apps/PhoneCommon
         url = https://android.googlesource.com/platform/packages/apps/PhoneCommon
@@ -1384,9 +1249,6 @@
 [submodule "packages/apps/QuickSearchBox"]
         path = packages/apps/QuickSearchBox
         url = https://android.googlesource.com/platform/packages/apps/QuickSearchBox
-[submodule "packages/apps/SafetyRegulatoryInfo"]
-        path = packages/apps/SafetyRegulatoryInfo
-        url = https://android.googlesource.com/platform/packages/apps/SafetyRegulatoryInfo
 [submodule "packages/apps/Settings"]
         path = packages/apps/Settings
         url = https://android.googlesource.com/platform/packages/apps/Settings
@@ -1396,15 +1258,12 @@
 [submodule "packages/apps/SpareParts"]
         path = packages/apps/SpareParts
         url = https://android.googlesource.com/platform/packages/apps/SpareParts
+[submodule "packages/apps/SpeechRecorder"]
+        path = packages/apps/SpeechRecorder
+        url = https://android.googlesource.com/platform/packages/apps/SpeechRecorder
 [submodule "packages/apps/Stk"]
         path = packages/apps/Stk
         url = https://android.googlesource.com/platform/packages/apps/Stk
-[submodule "packages/apps/StorageManager"]
-        path = packages/apps/StorageManager
-        url = https://android.googlesource.com/platform/packages/apps/StorageManager
-[submodule "packages/apps/TV"]
-        path = packages/apps/TV
-        url = https://android.googlesource.com/platform/packages/apps/TV
 [submodule "packages/apps/Tag"]
         path = packages/apps/Tag
         url = https://android.googlesource.com/platform/packages/apps/Tag
@@ -1414,21 +1273,12 @@
 [submodule "packages/apps/Test/connectivity"]
         path = packages/apps/Test/connectivity
         url = https://android.googlesource.com/platform/packages/apps/Test/connectivity
-[submodule "packages/apps/TimeZoneData"]
-        path = packages/apps/TimeZoneData
-        url = https://android.googlesource.com/platform/packages/apps/TimeZoneData
-[submodule "packages/apps/TimeZoneUpdater"]
-        path = packages/apps/TimeZoneUpdater
-        url = https://android.googlesource.com/platform/packages/apps/TimeZoneUpdater
 [submodule "packages/apps/TvSettings"]
         path = packages/apps/TvSettings
         url = https://android.googlesource.com/platform/packages/apps/TvSettings
 [submodule "packages/apps/UnifiedEmail"]
         path = packages/apps/UnifiedEmail
         url = https://android.googlesource.com/platform/packages/apps/UnifiedEmail
-[submodule "packages/apps/WallpaperPicker"]
-        path = packages/apps/WallpaperPicker
-        url = https://android.googlesource.com/platform/packages/apps/WallpaperPicker
 [submodule "packages/experimental"]
         path = packages/experimental
         url = https://android.googlesource.com/platform/packages/experimental
@@ -1441,9 +1291,6 @@
 [submodule "packages/providers/ApplicationsProvider"]
         path = packages/providers/ApplicationsProvider
         url = https://android.googlesource.com/platform/packages/providers/ApplicationsProvider
-[submodule "packages/providers/BlockedNumberProvider"]
-        path = packages/providers/BlockedNumberProvider
-        url = https://android.googlesource.com/platform/packages/providers/BlockedNumberProvider
 [submodule "packages/providers/BookmarkProvider"]
         path = packages/providers/BookmarkProvider
         url = https://android.googlesource.com/platform/packages/providers/BookmarkProvider
@@ -1483,18 +1330,9 @@
 [submodule "packages/screensavers/WebView"]
         path = packages/screensavers/WebView
         url = https://android.googlesource.com/platform/packages/screensavers/WebView
-[submodule "packages/services/BuiltInPrintService"]
-        path = packages/services/BuiltInPrintService
-        url = https://android.googlesource.com/platform/packages/services/BuiltInPrintService
-[submodule "packages/services/Car"]
-        path = packages/services/Car
-        url = https://android.googlesource.com/platform/packages/services/Car
 [submodule "packages/services/Mms"]
         path = packages/services/Mms
         url = https://android.googlesource.com/platform/packages/services/Mms
-[submodule "packages/services/NetworkRecommendation"]
-        path = packages/services/NetworkRecommendation
-        url = https://android.googlesource.com/platform/packages/services/NetworkRecommendation
 [submodule "packages/services/Telecomm"]
         path = packages/services/Telecomm
         url = https://android.googlesource.com/platform/packages/services/Telecomm
@@ -1510,42 +1348,33 @@
 [submodule "platform_testing"]
         path = platform_testing
         url = https://android.googlesource.com/platform/platform_testing
-[submodule "prebuilts/abi-dumps/ndk"]
-        path = prebuilts/abi-dumps/ndk
-        url = https://android.googlesource.com/platform/prebuilts/abi-dumps/ndk
-[submodule "prebuilts/abi-dumps/vndk"]
-        path = prebuilts/abi-dumps/vndk
-        url = https://android.googlesource.com/platform/prebuilts/abi-dumps/vndk
 [submodule "prebuilts/android-emulator"]
         path = prebuilts/android-emulator
         url = https://android.googlesource.com/platform/prebuilts/android-emulator
 [submodule "prebuilts/build-tools"]
         path = prebuilts/build-tools
         url = https://android.googlesource.com/platform/prebuilts/build-tools
-[submodule "prebuilts/checkcolor"]
-        path = prebuilts/checkcolor
-        url = https://android.googlesource.com/platform/prebuilts/checkcolor
-[submodule "prebuilts/checkstyle"]
-        path = prebuilts/checkstyle
-        url = https://android.googlesource.com/platform/prebuilts/checkstyle
+[submodule "prebuilts/clang/darwin-x86/host/3.6"]
+        path = prebuilts/clang/darwin-x86/host/3.6
+        url = https://android.googlesource.com/platform/prebuilts/clang/darwin-x86/host/3.6
 [submodule "prebuilts/clang/host/darwin-x86"]
         path = prebuilts/clang/host/darwin-x86
         url = https://android.googlesource.com/platform/prebuilts/clang/host/darwin-x86
 [submodule "prebuilts/clang/host/linux-x86"]
         path = prebuilts/clang/host/linux-x86
         url = https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86
-[submodule "prebuilts/deqp"]
-        path = prebuilts/deqp
-        url = https://android.googlesource.com/platform/prebuilts/deqp
+[submodule "prebuilts/clang/linux-x86/host/3.6"]
+        path = prebuilts/clang/linux-x86/host/3.6
+        url = https://android.googlesource.com/platform/prebuilts/clang/linux-x86/host/3.6
 [submodule "prebuilts/devtools"]
         path = prebuilts/devtools
         url = https://android.googlesource.com/platform/prebuilts/devtools
+[submodule "prebuilts/eclipse"]
+        path = prebuilts/eclipse
+        url = https://android.googlesource.com/platform/prebuilts/eclipse
 [submodule "prebuilts/gcc/darwin-x86/aarch64/aarch64-linux-android-4.9"]
         path = prebuilts/gcc/darwin-x86/aarch64/aarch64-linux-android-4.9
         url = https://android.googlesource.com/platform/prebuilts/gcc/darwin-x86/aarch64/aarch64-linux-android-4.9
-[submodule "prebuilts/gcc/darwin-x86/arm/arm-eabi-4.8"]
-        path = prebuilts/gcc/darwin-x86/arm/arm-eabi-4.8
-        url = https://android.googlesource.com/platform/prebuilts/gcc/darwin-x86/arm/arm-eabi-4.8
 [submodule "prebuilts/gcc/darwin-x86/arm/arm-linux-androideabi-4.9"]
         path = prebuilts/gcc/darwin-x86/arm/arm-linux-androideabi-4.9
         url = https://android.googlesource.com/platform/prebuilts/gcc/darwin-x86/arm/arm-linux-androideabi-4.9
@@ -1561,9 +1390,6 @@
 [submodule "prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9"]
         path = prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9
         url = https://android.googlesource.com/platform/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9
-[submodule "prebuilts/gcc/linux-x86/arm/arm-eabi-4.8"]
-        path = prebuilts/gcc/linux-x86/arm/arm-eabi-4.8
-        url = https://android.googlesource.com/platform/prebuilts/gcc/linux-x86/arm/arm-eabi-4.8
 [submodule "prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9"]
         path = prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9
         url = https://android.googlesource.com/platform/prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9
@@ -1597,24 +1423,24 @@
 [submodule "prebuilts/gradle-plugin"]
         path = prebuilts/gradle-plugin
         url = https://android.googlesource.com/platform/prebuilts/gradle-plugin
-[submodule "prebuilts/jdk/jdk8"]
-        path = prebuilts/jdk/jdk8
-        url = https://android.googlesource.com/platform/prebuilts/jdk/jdk8
 [submodule "prebuilts/libs/libedit"]
         path = prebuilts/libs/libedit
         url = https://android.googlesource.com/platform/prebuilts/libs/libedit
 [submodule "prebuilts/maven_repo/android"]
         path = prebuilts/maven_repo/android
         url = https://android.googlesource.com/platform/prebuilts/maven_repo/android
-[submodule "prebuilts/maven_repo/bumptech"]
-        path = prebuilts/maven_repo/bumptech
-        url = https://android.googlesource.com/platform/prebuilts/maven_repo/bumptech
 [submodule "prebuilts/misc"]
         path = prebuilts/misc
         url = https://android.googlesource.com/platform/prebuilts/misc
 [submodule "prebuilts/ndk"]
         path = prebuilts/ndk
         url = https://android.googlesource.com/platform/prebuilts/ndk
+[submodule "prebuilts/ninja/darwin-x86"]
+        path = prebuilts/ninja/darwin-x86
+        url = https://android.googlesource.com/platform/prebuilts/ninja/darwin-x86
+[submodule "prebuilts/ninja/linux-x86"]
+        path = prebuilts/ninja/linux-x86
+        url = https://android.googlesource.com/platform/prebuilts/ninja/linux-x86
 [submodule "prebuilts/python/darwin-x86/2.7.5"]
         path = prebuilts/python/darwin-x86/2.7.5
         url = https://android.googlesource.com/platform/prebuilts/python/darwin-x86/2.7.5
@@ -1639,57 +1465,42 @@
 [submodule "system/ca-certificates"]
         path = system/ca-certificates
         url = https://android.googlesource.com/platform/system/ca-certificates
-[submodule "system/chre"]
-        path = system/chre
-        url = https://android.googlesource.com/platform/system/chre
+[submodule "system/connectivity/apmanager"]
+        path = system/connectivity/apmanager
+        url = https://android.googlesource.com/platform/system/connectivity/apmanager
+[submodule "system/connectivity/dhcp_client"]
+        path = system/connectivity/dhcp_client
+        url = https://android.googlesource.com/platform/system/connectivity/dhcp_client
+[submodule "system/connectivity/shill"]
+        path = system/connectivity/shill
+        url = https://android.googlesource.com/platform/system/connectivity/shill
 [submodule "system/connectivity/wificond"]
         path = system/connectivity/wificond
         url = https://android.googlesource.com/platform/system/connectivity/wificond
-[submodule "system/connectivity/wifilogd"]
-        path = system/connectivity/wifilogd
-        url = https://android.googlesource.com/platform/system/connectivity/wifilogd
 [submodule "system/core"]
         path = system/core
         url = https://android.googlesource.com/platform/system/core
 [submodule "system/extras"]
         path = system/extras
         url = https://android.googlesource.com/platform/system/extras
+[submodule "system/firewalld"]
+        path = system/firewalld
+        url = https://android.googlesource.com/platform/system/firewalld
 [submodule "system/gatekeeper"]
         path = system/gatekeeper
         url = https://android.googlesource.com/platform/system/gatekeeper
-[submodule "system/hardware/interfaces"]
-        path = system/hardware/interfaces
-        url = https://android.googlesource.com/platform/system/hardware/interfaces
-[submodule "system/hwservicemanager"]
-        path = system/hwservicemanager
-        url = https://android.googlesource.com/platform/system/hwservicemanager
 [submodule "system/keymaster"]
         path = system/keymaster
         url = https://android.googlesource.com/platform/system/keymaster
-[submodule "system/libfmq"]
-        path = system/libfmq
-        url = https://android.googlesource.com/platform/system/libfmq
-[submodule "system/libhidl"]
-        path = system/libhidl
-        url = https://android.googlesource.com/platform/system/libhidl
-[submodule "system/libhwbinder"]
-        path = system/libhwbinder
-        url = https://android.googlesource.com/platform/system/libhwbinder
-[submodule "system/libufdt"]
-        path = system/libufdt
-        url = https://android.googlesource.com/platform/system/libufdt
-[submodule "system/libvintf"]
-        path = system/libvintf
-        url = https://android.googlesource.com/platform/system/libvintf
 [submodule "system/media"]
         path = system/media
         url = https://android.googlesource.com/platform/system/media
+[submodule "system/nativepower"]
+        path = system/nativepower
+        url = https://android.googlesource.com/platform/system/nativepower
 [submodule "system/netd"]
         path = system/netd
         url = https://android.googlesource.com/platform/system/netd
-[submodule "system/nfc"]
-        path = system/nfc
-        url = https://android.googlesource.com/platform/system/nfc
 [submodule "system/nvram"]
         path = system/nvram
         url = https://android.googlesource.com/platform/system/nvram
@@ -1699,15 +1510,9 @@
 [submodule "system/sepolicy"]
         path = system/sepolicy
         url = https://android.googlesource.com/platform/system/sepolicy
-[submodule "system/timezone"]
-        path = system/timezone
-        url = https://android.googlesource.com/platform/system/timezone
 [submodule "system/tools/aidl"]
         path = system/tools/aidl
         url = https://android.googlesource.com/platform/system/tools/aidl
-[submodule "system/tools/hidl"]
-        path = system/tools/hidl
-        url = https://android.googlesource.com/platform/system/tools/hidl
 [submodule "system/tpm"]
         path = system/tpm
         url = https://android.googlesource.com/platform/system/tpm
@@ -1717,36 +1522,12 @@
 [submodule "system/vold"]
         path = system/vold
         url = https://android.googlesource.com/platform/system/vold
-[submodule "test/framework"]
-        path = test/framework
-        url = https://android.googlesource.com/platform/test/framework
-[submodule "test/sts"]
-        path = test/sts
-        url = https://android.googlesource.com/platform/test/sts
-[submodule "test/vts"]
-        path = test/vts
-        url = https://android.googlesource.com/platform/test/vts
-[submodule "test/vts-testcase/fuzz"]
-        path = test/vts-testcase/fuzz
-        url = https://android.googlesource.com/platform/test/vts-testcase/fuzz
-[submodule "test/vts-testcase/hal"]
-        path = test/vts-testcase/hal
-        url = https://android.googlesource.com/platform/test/vts-testcase/hal
-[submodule "test/vts-testcase/hal-trace"]
-        path = test/vts-testcase/hal-trace
-        url = https://android.googlesource.com/platform/test/vts-testcase/hal-trace
-[submodule "test/vts-testcase/kernel"]
-        path = test/vts-testcase/kernel
-        url = https://android.googlesource.com/platform/test/vts-testcase/kernel
-[submodule "test/vts-testcase/performance"]
-        path = test/vts-testcase/performance
-        url = https://android.googlesource.com/platform/test/vts-testcase/performance
-[submodule "test/vts-testcase/security"]
-        path = test/vts-testcase/security
-        url = https://android.googlesource.com/platform/test/vts-testcase/security
-[submodule "test/vts-testcase/vndk"]
-        path = test/vts-testcase/vndk
-        url = https://android.googlesource.com/platform/test/vts-testcase/vndk
+[submodule "system/weaved"]
+        path = system/weaved
+        url = https://android.googlesource.com/platform/system/weaved
+[submodule "system/webservd"]
+        path = system/webservd
+        url = https://android.googlesource.com/platform/system/webservd
 [submodule "toolchain/binutils"]
         path = toolchain/binutils
         url = https://android.googlesource.com/platform/toolchain/binutils
@@ -1759,19 +1540,7 @@
 [submodule "tools/external/gradle"]
         path = tools/external/gradle
         url = https://android.googlesource.com/platform/tools/external/gradle
-[submodule "tools/loganalysis"]
-        path = tools/loganalysis
-        url = https://android.googlesource.com/platform/tools/loganalysis
-[submodule "tools/repohooks"]
-        path = tools/repohooks
-        url = https://android.googlesource.com/platform/tools/repohooks
 [submodule "tools/test/connectivity"]
         path = tools/test/connectivity
         url = https://android.googlesource.com/platform/tools/test/connectivity
-[submodule "tools/tradefederation/contrib"]
-        path = tools/tradefederation/contrib
-        url = https://android.googlesource.com/platform/tools/tradefederation/contrib
-[submodule "tools/tradefederation/core"]
-        path = tools/tradefederation/core
-        url = https://android.googlesource.com/platform/tools/tradefederation/core
 
