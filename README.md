@@ -42,12 +42,13 @@ To do so...
 6. Add your SSH key to `ssh-agent` (type `ssh-add ~/.ssh/id_rsa` and enter your passphrase when asked)
 7. [Add the SSH key to your GitHub account](https://help.github.com/en/articles/adding-a-new-ssh-key-to-your-github-account)
 8. After, just clone the repo using `git clone --recursive git@github.com:quantify-nfc/Wear24-NFC-ROM-AOSP`
+9. Follow the instructions under [Repo Setup](#repo-setup)
 
 ### Pushing
 
 If you are planning on pushing large changes, it is recommended to change the following git config values:
 
-```
+```bash
 git config core.bigFileThreshold 15m
 git config --global http.postBuffer 157286400
 ```
@@ -58,6 +59,45 @@ git config --global http.postBuffer 157286400
 |---|---|---|
 |`core.bigFileThreshold 15m`|Disables delta compression on files larger than 15 MB|Vastly reduces `git push` time|
 |`http.postBuffer 157286400`|Increases the Git buffer size to the largest file in the repo|Decreases failed `push` attempts|
+
+## Repo Setup
+
+1. Install all required packages
+
+```bash
+sudo apt-get install git-core gnupg flex bison gperf build-essential zip curl zlib1g-dev gcc-multilib g++-multilib libc6-dev-i386 lib32ncurses5-dev x11proto-core-dev libx11-dev lib32z-dev libgl1-mesa-dev libxml2-utils xsltproc unzip
+```
+
+2. Install the Google Repo tool
+
+```bash
+mkdir ~/bin
+PATH=~/bin:$PATH
+curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
+chmod a+x ~/bin/repo
+```
+
+3. Initialise a Repo client
+
+```bash
+# For 7.1.1
+repo init --depth 1 -b android-wear-7.1.1_r1 -u https://android.googlesource.com/platform/manifest
+```
+
+4. Synchronise the Android source
+
+```bash
+repo sync -c --no-clone-bundle -j$(nproc --all)
+```
+
+5. Check that the local manifest is located at `.repo/local_manifests/local_manifest.xml`. This contains our custom Repo 'submodules'. If this doesn't exist, then [download it from GitHub].
+
+## Pulling updates
+
+Just running the usual `git pull` isn't (normally) enough anymore! Follow a few simple steps every time a change is made:
+1. `git pull`
+2. `git submodule update`
+3. `repo sync`
 
 ## Building
 
