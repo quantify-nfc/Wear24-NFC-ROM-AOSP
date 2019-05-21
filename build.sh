@@ -44,6 +44,30 @@ echo "Setting up Jack variables..."
 export ANDROID_JACK_VM_ARGS="-Xmx8G -Xms1G -Dfile.encoding=UTF-8 -XX:+TieredCompilation"
 export JACK_SERVER_VM_ARGUMENTS="-Xmx8G -Xms1G -Dfile.encoding=UTF-8 -XX:+TieredCompilation"
 
+# set up ccache, if it hasn't been set up already
+
+if [ ! -f ".ccacheset" ]; then
+	read -p "Use ccache to speed up builds (y/n)?" choice
+	case "$choice" in 
+  	y|Y ) export USE_CCACHE=1 && touch .ccacheset && echo "yes" > .ccacheset;;
+  	n|N ) echo "Did not set ccache" && touch .ccacheset;;
+  	* ) echo "Invalid" && exit 1;;
+	esac
+	
+	if [ cat .ccacheset == "yes" ]; then
+		read -p "How much cache? (use syntax ###G, ie 25G)" choice
+		ccache -M $choice
+		read -p "Enable compression (y/n)?" choice
+		case "$choice" in
+		y|Y ) export CCACHE_COMPRESS=1;;
+		n|N ) echo "Did not enable compression"
+		* ) echo "Invalid, did not enable compression."
+	fi
+	echo "To run through ccache setup again, remove the .ccacheset file"
+fi
+
+	
+
 # Restart the Jack server to use the new arguments
 echo
 echo
