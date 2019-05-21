@@ -62,6 +62,16 @@ git config --global http.postBuffer 157286400
 
 ## Repo Setup
 
+### Automatic
+
+A repo setup script is included in the repository. Just run:
+
+```bash
+. repo-setup.sh
+```
+
+### Manual
+
 1. Install all required packages
 
 ```bash
@@ -90,7 +100,7 @@ repo init --depth 1 -b android-wear-7.1.1_r1 -u https://android.googlesource.com
 repo sync -c --no-clone-bundle -j$(nproc --all)
 ```
 
-5. Check that the local manifest is located at `.repo/local_manifests/local_manifest.xml`. This contains our custom Repo 'submodules'. If this doesn't exist, then [download it from GitHub].
+5. Check that the local manifest is located at `.repo/local_manifests/local_manifest.xml`. This contains our custom Repo 'submodules'. If this doesn't exist, then [download it from GitHub](https://github.com/quantify-nfc/Wear24-NFC-ROM-AOSP/blob/android-wear-7.1.1_r1/.repo/local_manifests/local_manifest.xml).
 
 ## Pulling updates
 
