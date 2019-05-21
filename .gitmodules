@@ -1547,3 +1547,6 @@
 [submodule "device/quanta/dorado"]
 	path = device/quanta/dorado
 	url = https://github.com/quantify-nfc/platform_device_quanta_dorado
+[submodule "packages/app"]
+	path = packages/app
+	url = https://github.com/quantify-nfc/WearOS-System-Apps
