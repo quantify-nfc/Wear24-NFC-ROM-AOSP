@@ -1,9 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
 
+  <remote  name="aosp"
+           fetch=".."
+           review="https://android-review.googlesource.com/" />
+
   <remote  name="github" 
            fetch="https://github.com/"
            revision="master" />
 
-  <project path="device/quanta/dorado" name="quantify-nfc/platform_device_quanta_dorado" remote="github" />
+  <project path="device/quanta/dorado" name="quantify-nfc/platform_device_quanta_dorado"  remote="github"/>
+
+  <!-- Issue with default flex on newer OSes so, instead, pull the latest flex from master -->
+  <remove-project name="platform/prebuilts/build-tools" />
+  <project path="prebuilts/build-tools" name="platform/prebuilts/build-tools" revision="master" groups="pdk" clone-depth="1" remote="aosp" />
 </manifest>
