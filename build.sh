@@ -37,7 +37,7 @@ if [ ! -d ".quantifyinit" ]; then
   # set up ccache, if it hasn't been set up already
   
   if [ ! -f ".quantifyinit/ccacheset" ]; then
-    CCACHE_REGEX="[0-9][0-9[0-9]?[Gg]?[Bb]?"
+    CCACHE_REGEX="[0-9][0-9][0-9]?[Gg]?[Bb]?"
     res="	"
     
     read -p "Use ccache to speed up builds (y/n)? " choice
