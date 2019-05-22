@@ -104,17 +104,11 @@ Just running `git pull` by itself isn't (normally) enough anymore! Follow a few 
 
 ## Building
 
-**This section has NOT been updated to suit this repository.**
-
-`android-tools-fsutils` is needed for `make_ext4fs`!
-
-`sudo apt install android-tools-fsutils`
-
 ### Automatic
 
-**This section has NOT been updated to suit this repository.**
+After [setting up the repo](), just run `. build.sh` in the repo root.
 
-Extract the existing `system.img`, add our own files, and rebuild using `./build.sh`.
+Everything will (hopefully) build automatically.
 
 ### Manual
 
