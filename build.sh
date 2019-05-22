@@ -80,6 +80,10 @@ else # .quantifyinit doesn't exist
   fi
 fi
 
+# Building on Ubuntu 18.04 causes an issue with the flex prebuilt package
+# This fixes it for some strange reason that none of us question because it lets us build AOSP :)
+export LC_ALL=C
+
 set +e
 
 timeout 5 "AOSP build begins in %s seconds."
