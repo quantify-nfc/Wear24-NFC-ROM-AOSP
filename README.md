@@ -106,7 +106,7 @@ Just running `git pull` by itself isn't (normally) enough anymore! Follow a few 
 
 ### Automatic
 
-After [setting up the repo](), just run `. build.sh` in the repo root.
+After [setting up the repo](#repo-setup), just run `. build.sh` in the repo root.
 
 Everything will (hopefully) build automatically.
 
