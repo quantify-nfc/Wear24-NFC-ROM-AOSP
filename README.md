@@ -97,9 +97,9 @@ repo sync -c --no-clone-bundle -j$(nproc --all)
 
 ## Pulling updates
 
-Just running the usual `git pull` isn't (normally) enough anymore! Follow a few simple steps every time a change is made:
-1. `git pull`
-2. `git submodule update`
+Just running `git pull` by itself isn't (normally) enough anymore! Follow a few simple steps every time a change is made:
+1. Change to the top-level AOSP directory (e.g. `cd ~/Wear-24-NFC-ROM-AOSP`)
+2. `git pull`
 3. `repo sync`
 
 ## Building
