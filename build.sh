@@ -80,6 +80,8 @@ else # .quantifyinit doesn't exist
   fi
 fi
 
+set +e
+
 timeout 5 "AOSP build begins in %s seconds."
 
 # Setup build environment
