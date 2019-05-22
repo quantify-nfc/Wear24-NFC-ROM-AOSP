@@ -12,26 +12,19 @@ https://discord.gg/8XyTeUC
 
 ## Branches
 
-**This section has NOT been updated to suit this repository.**
-
 ![](check_your_branch.png)
 
 PLEASE CHECK WHICH BRANCH YOU ARE ON BEFORE BUILDING!
 
-This repository has three main branches: `master`, `nfc` and `release`. These branches are semi-equivalent to Google Chrome's Stable, Beta and Dev update channels.
+This repository has a different branch for each Android Wear AOSP build: `android-wear-7.1.1_r1`, `android-wear-8.1.0_r1` and `one for system H when we add it`. These branches are named identically to the applicable [Android Open Source Project](https://android.googlesource.com/) branches.
 
-`master` is *normally* stable. We generally don't push changes here unless we are confident that they work. We don't recommend flashing your device using this code despite us calling it 'stable'.
-
-`nfc` is unstable and experimental. Likely broken half the time. **DO NOT FLASH FROM HERE UNLESS YOU WANT TO** (probably) **BRICK YOUR DEVICE!**
-
-`release` is our end user branch. This is where we will distribute the ROM when there is an actual reason to flash it. Our releases are automagically built by our [Travis CI integration](https://travis-ci.org/davwheat/Wear24-NFC-ROM/branches) and uploaded to [GitHub releases](https://github.com/davwheat/Wear24-NFC-ROM/releases).
+Our releases are automagically built by our [Travis CI integration](https://travis-ci.org/quantify-nfc/Wear24-NFC-ROM-AOSP/branches) and uploaded to [GitHub releases](https://github.com/quantify-nfc/Wear24-NFC-ROM-AOSP/releases).
 
 ## Contributing
 
-
 ### Cloning
 
-Due to high file sizes, it is recommended to only clone the whole repository if necessary. If you do plan on doing so, **use SSH and NOT HTTP**.
+Due to high file sizes, it is recommended to only clone the whole repository if necessary. If you do plan on doing so, **it is highly recommended you use SSH and not HTTPS**.
 
 To do so...
 1. Open the terminal
@@ -91,7 +84,7 @@ chmod a+x ~/bin/repo
 
 ```bash
 # For 7.1.1
-repo init --depth 1 -b android-wear-7.1.1_r1 -u https://android.googlesource.com/platform/manifest
+repo init --depth 1 -b android-wear-7.1.1_r1 [OR THE BRANCH YOU ARE USING] -u https://android.googlesource.com/platform/manifest
 ```
 
 4. Synchronise the Android source
