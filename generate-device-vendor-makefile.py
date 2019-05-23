@@ -22,7 +22,11 @@ lines = [aosp_license, "\n\n"]
 
 os.chdir("vendor/")
 for file in glob.iglob("**/*.*", recursive=True):
-    lines.append("PRODUCT_COPY_FILES := \\" + "\n")
+    if file.endswith("apk"):
+        lines.append("BUILD_PREBUILT := \\" + "\n")
+    else
+        lines.append("PRODUCT_COPY_FILES := \\" + "\n")
+    
     lines.append("	" + "vendor/quanta/dorado/proprietary/" + file + ":system/vendor/" + file + ":quanta\n")
 
 makefile.writelines(lines)
