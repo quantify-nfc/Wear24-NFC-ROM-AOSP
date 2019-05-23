@@ -32,7 +32,7 @@ for file in glob.iglob("**/*.*", recursive=True):
             mkLines.append("LOCAL_PATH := $(call my-dir)\n")
             mkLines.append("include $(CLEAR_VARS)\n")
             mkLines.append("LOCAL_MODULE_TAGS := optional\n")
-            mkLines.append("LOCAL_MODULE := "+filename+"\n")
+            mkLines.append("LOCAL_MODULE := "+filename[:-4]+"\n")
             mkLines.append("LOCAL_SRC_FILES := $(LOCAL_MODULE).apk\n")
             mkLines.append("LOCAL_MODULE_CLASS := APPS\n")
             mkLines.append("LOCAL_MODULE_SUFFIX := $(COMMON_ANDROID_PACKAGE_SUFFIX)\n")
