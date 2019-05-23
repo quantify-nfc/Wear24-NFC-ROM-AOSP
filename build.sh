@@ -47,7 +47,7 @@ if [ ! -d ".quantifyinit" ]; then
       * ) echo "Invalid" && rm -rf .quantifyinit && exit 1;;
     esac
     
-    if [ $(cut -f1 .quantifyinit/ccacheset) == "yes" ]; then
+    if [ "$(cut -f1 .quantifyinit/ccacheset)" == "yes" ]; then
       read -p "How much cache? (10-999GB) " choice
       if [[ $choice =~ $CCACHE_REGEX ]]; then
         choice=${choice%G*} # delete any characters starting with G
