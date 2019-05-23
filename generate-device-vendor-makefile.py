@@ -18,16 +18,39 @@ aosp_license = ("""#
 #""")
 
 makefile = open("device-vendor.mk", "w+")
-lines = [aosp_license, "\n\n"]
+lines = [aosp_license, "\n\n\n", "# COPIED FILES\n\n"]
+packages = []
 
 os.chdir("vendor/")
 for file in glob.iglob("**/*.*", recursive=True):
     if file.endswith("apk"):
-        lines.append("BUILD_PREBUILT := \\" + "\n")
-    else
+        directory = file.rsplit('/', 1)[0]
+        filename = file.rsplit('/', 1)[-1]
+        with open(directory + "/Android.mk", "w+") as packagemakefile:
+            mkLines = [aosp_license, "\n\n"]
+            
+            mkLines.append("LOCAL_PATH := $(call my-dir)\n")
+            mkLines.append("include $(CLEAR_VARS)\n")
+            mkLines.append("LOCAL_MODULE_TAGS := optional\n")
+            mkLines.append("LOCAL_MODULE := "+filename+"\n")
+            mkLines.append("LOCAL_SRC_FILES := $(LOCAL_MODULE).apk\n")
+            mkLines.append("LOCAL_MODULE_CLASS := APPS\n")
+            mkLines.append("LOCAL_MODULE_SUFFIX := $(COMMON_ANDROID_PACKAGE_SUFFIX)\n")
+            mkLines.append("LOCAL_CERTIFICATE := PRESIGNED\n")
+            mkLines.append("include $(BUILD_PREBUILT))\n")
+
+            packagemakefile.writelines(mkLines)
+        
+        packages.append(filename)
+    else:
         lines.append("PRODUCT_COPY_FILES := \\" + "\n")
-    
-    lines.append("	" + "vendor/quanta/dorado/proprietary/" + file + ":system/vendor/" + file + ":quanta\n")
+        lines.append("	" + "vendor/quanta/dorado/proprietary/" + file + ":system/vendor/" + file + ":quanta\n")
+
+lines += ["\n\n\n", "# APPLICATION PACKAGES\n\n"]
+
+for package in packages:
+    lines.append("PRODUCT_PACKAGES += \\\n")
+    lines.append("    " + package + "\n")
 
 makefile.writelines(lines)
-   
+

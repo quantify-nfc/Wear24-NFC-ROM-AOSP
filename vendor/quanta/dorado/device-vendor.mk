@@ -14,6 +14,9 @@
 # limitations under the License.
 #
 
+
+# COPIED FILES
+
 PRODUCT_COPY_FILES := \
 	vendor/quanta/dorado/proprietary/qcril.db:system/vendor/qcril.db:quanta
 PRODUCT_COPY_FILES := \
@@ -201,7 +204,7 @@ PRODUCT_COPY_FILES := \
 PRODUCT_COPY_FILES := \
 	vendor/quanta/dorado/proprietary/lib/hw/keystore.msm8909.so:system/vendor/lib/hw/keystore.msm8909.so:quanta
 PRODUCT_COPY_FILES := \
-	vendor/quanta/dorado/proprietary/app/ims/ims.apk:system/vendor/app/ims/ims.apk:quanta
+	vendor/quanta/dorado/proprietary/app/ims/Android.mk:system/vendor/app/ims/Android.mk:quanta
 PRODUCT_COPY_FILES := \
 	vendor/quanta/dorado/proprietary/app/ims/oat/arm/ims.odex:system/vendor/app/ims/oat/arm/ims.odex:quanta
 PRODUCT_COPY_FILES := \
@@ -209,6 +212,15 @@ PRODUCT_COPY_FILES := \
 PRODUCT_COPY_FILES := \
 	vendor/quanta/dorado/proprietary/firmware/a300_pfp.fw:system/vendor/firmware/a300_pfp.fw:quanta
 PRODUCT_COPY_FILES := \
-	vendor/quanta/dorado/proprietary/overlay/ClockworkGmsRuntimeResourceOverlay.apk:system/vendor/overlay/ClockworkGmsRuntimeResourceOverlay.apk:quanta
-PRODUCT_COPY_FILES := \
-	vendor/quanta/dorado/proprietary/overlay/ClockworkHomeGoogleRuntimeResourceOverlay.apk:system/vendor/overlay/ClockworkHomeGoogleRuntimeResourceOverlay.apk:quanta
+	vendor/quanta/dorado/proprietary/overlay/Android.mk:system/vendor/overlay/Android.mk:quanta
+
+
+
+# APPLICATION PACKAGES
+
+PRODUCT_PACKAGES += \
+    ims.apk
+PRODUCT_PACKAGES += \
+    ClockworkGmsRuntimeResourceOverlay.apk
+PRODUCT_PACKAGES += \
+    ClockworkHomeGoogleRuntimeResourceOverlay.apk
