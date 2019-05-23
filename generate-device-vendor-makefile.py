@@ -37,7 +37,7 @@ for file in glob.iglob("**/*.*", recursive=True):
             mkLines.append("LOCAL_MODULE_CLASS := APPS\n")
             mkLines.append("LOCAL_MODULE_SUFFIX := $(COMMON_ANDROID_PACKAGE_SUFFIX)\n")
             mkLines.append("LOCAL_CERTIFICATE := PRESIGNED\n")
-            mkLines.append("include $(BUILD_PREBUILT))\n")
+            mkLines.append("include $(BUILD_PREBUILT)\n")
 
             packagemakefile.writelines(mkLines)
         
