@@ -11,10 +11,6 @@
 
   <project path="device/quanta/dorado" name="platform_device_quanta_dorado"  remote="github"/>
 
-  <!-- Issue with default flex on newer OSes so, instead, pull the latest flex from master -->
-  <remove-project name="platform/prebuilts/build-tools" />
-  <project path="prebuilts/build-tools" name="platform/prebuilts/build-tools" revision="master" groups="pdk" clone-depth="1" remote="aosp" />
-
   <!-- Remove unneeded apps -->
   <remove-project name="platform/packages/apps/BasicSmsReceiver" />
   <remove-project name="platform/packages/apps/Bluetooth" />
