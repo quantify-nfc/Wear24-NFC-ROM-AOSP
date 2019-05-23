@@ -69,12 +69,12 @@ if [ ! -d ".quantifyinit" ]; then
     fi # cut match
   fi # ccacheset exists
 else # .quantifyinit doesn't exist
-  if [ $(cut -f1 .quantifyinit/ccacheset) == "yes" ]; then
+  if [ "$(cut -f1 .quantifyinit/ccacheset)" == "yes" ]; then
     export USE_CCACHE=1
     echo "ccache is enabled"
     ccache -M $(cut -f2 .quantifyinit/ccacheset)
   fi
-  if [ $(cut -f3 .quantifyinit/ccacheset) == "yes" ]; then
+  if [ "$(cut -f3 .quantifyinit/ccacheset)" == "yes" ]; then
     export CCACHE_COMPRESS=1
     echo "ccache compression is enabled"
   fi
