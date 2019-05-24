@@ -12,7 +12,7 @@ cache:
 before_install:
 - wget https://raw.githubusercontent.com/davwheat/travis-ci-discord-webhook/master/send.sh
 - chmod +x send.sh
-- . send.sh build-start $WEBHOOK_URL
+
 - . repo-setup.sh
 
 addons:
