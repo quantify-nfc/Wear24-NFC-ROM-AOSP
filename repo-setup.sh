@@ -1,14 +1,29 @@
 #!/bin/bash
 
+NoTimeouts=false
+
+while [ "${1:-}" != "" ]; do
+  case "$1" in
+    "-n" | "--no-timeouts")
+      NoTimeouts=false
+      ;;
+  esac
+  shift
+done
+
 timeout () {
+  if [ NoTimeouts == false ]; then
     tput sc
     time=$1; while [ $time -ge 0 ]; do
-        tput rc; tput el
-        printf "$2" $time
-        ((time--))
-        sleep 1
+      tput rc; tput el
+      printf "$2" $time
+      ((time--))
+      sleep 1
     done
     tput rc; tput ed;
+  else
+    echo "*** Timeout skipped! ***"
+  fi
 }
 
 clear

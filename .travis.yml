@@ -13,7 +13,7 @@ before_install:
 - wget https://raw.githubusercontent.com/davwheat/travis-ci-discord-webhook/master/send.sh
 - chmod +x send.sh
 
-- . repo-setup.sh
+- yes | . repo-setup.sh -n
 
 addons:
   apt:
@@ -41,7 +41,7 @@ addons:
     - unzip
     update: true
 
-script: . build.sh
+script: . build.sh -n
 
 before_deploy:
 - git config --local user.name $GIT_NAME
