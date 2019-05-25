@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-NoTimeouts=false
+export NoTimeouts=false
 
 while [ "${1:-}" != "" ]; do
   case "$1" in
@@ -13,7 +13,7 @@ while [ "${1:-}" != "" ]; do
 done
 
 timeout () {
-  if [ NoTimeouts == false ]; then
+  if [ "$NoTimeouts" == false ]; then
     tput sc
     time=$1; while [ $time -ge 0 ]; do
       tput rc; tput el
@@ -50,39 +50,41 @@ if [ ! -d ".quantifyinit" ]; then
   touch .quantifyinit/jackinstalled
   
   # set up ccache, if it hasn't been set up already
-  
-  if [ ! -f ".quantifyinit/ccacheset" ]; then
-    CCACHE_REGEX="[0-9][0-9][0-9]?[Gg]?[Bb]?"
-    res="	"
     
-    read -p "Use ccache to speed up builds (y/n)? " choice
-    case "$choice" in
-      y|Y ) export USE_CCACHE=1 && echo -n "yes$res" >> .quantifyinit/ccacheset;;
-      n|N ) echo "Did not set ccache" && touch .quantifyinit/ccacheset;;
-      * ) echo "Invalid" && rm -rf .quantifyinit && exit 1;;
-    esac
+  if [ "$TRAVIS" == true ]; then
+    touch .quantifyinit/ccacheset
+  else  
+    if [ ! -f ".quantifyinit/ccacheset" ]; then
+      CCACHE_REGEX="[0-9][0-9][0-9]?[Gg]?[Bb]?"
+      res="	"
+      read -p "Use ccache to speed up builds (y/n)? " choice
+      case "$choice" in
+        y|Y ) export USE_CCACHE=1 && echo -n "yes$res" >> .quantifyinit/ccacheset;;
+        n|N ) echo "Did not set ccache" && touch .quantifyinit/ccacheset;;
+        * ) echo "Invalid" && rm -rf .quantifyinit && exit 1;;
+      esac
     
-    if [ "$(cut -f1 .quantifyinit/ccacheset)" == "yes" ]; then
-      read -p "How much cache? (10-999GB) " choice
-      if [[ $choice =~ $CCACHE_REGEX ]]; then
-        choice=${choice%G*} # delete any characters starting with G
-        choice=${choice}G
-        echo -n "$choice$res" >> .quantifyinit/ccacheset
-        ccache -M $choice
-        read -p "Enable compression (y/n)? " choice
-        case "$choice" in
-          y|Y ) export CCACHE_COMPRESS=1 && echo -n "yes$res" >> .quantifyinit/ccacheset && echo "Enabled ccache compression.";;
-          n|N ) echo "Did not enable compression";;
-          * ) echo "Invalid, did not enable compression.";;
-        esac
-        
-      else
-        echo "Did not match format! Resetting init and exiting..."
-        rm -rf .quantifyinit
-        exit 1
-      fi # match regex
-    fi # cut match
-  fi # ccacheset exists
+      if [ "$(cut -f1 .quantifyinit/ccacheset)" == "yes" ]; then
+        read -p "How much cache? (10-999GB) " choice
+        if [[ $choice =~ $CCACHE_REGEX ]]; then
+          choice=${choice%G*} # delete any characters starting with G
+          choice=${choice}G
+          echo -n "$choice$res" >> .quantifyinit/ccacheset
+          ccache -M $choice
+          read -p "Enable compression (y/n)? " choice
+          case "$choice" in
+            y|Y ) export CCACHE_COMPRESS=1 && echo -n "yes$res" >> .quantifyinit/ccacheset && echo "Enabled ccache compression.";;
+            n|N ) echo "Did not enable compression";;
+            * ) echo "Invalid, did not enable compression.";;
+          esac        
+        else
+          echo "Did not match format! Resetting init and exiting..."
+          rm -rf .quantifyinit
+          exit 1
+        fi # match regex
+      fi # cut match
+    fi # ccacheset exists
+  fi # travis build
 else # .quantifyinit doesn't exist
   if [ "$(cut -f1 .quantifyinit/ccacheset)" == "yes" ]; then
     export USE_CCACHE=1
