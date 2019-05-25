@@ -1,19 +1,19 @@
 #!/bin/bash
 set -e
 
-export NoTimeouts=false
+NoTimeouts=false
 
 while [ "${1:-}" != "" ]; do
   case "$1" in
     "-n" | "--no-timeouts")
-      NoTimeouts=false
+      NoTimeouts=true
       ;;
   esac
   shift
 done
 
 timeout () {
-  if [ "$NoTimeouts" == false ]; then
+  if [ NoTimeouts == false ]; then
     tput sc
     time=$1; while [ $time -ge 0 ]; do
       tput rc; tput el
