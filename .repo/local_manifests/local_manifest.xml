@@ -62,6 +62,6 @@
   <remove-project name="platform/packages/apps/TvSettings" />
   <remove-project name="platform/packages/apps/UnifiedEmail" />
 
-  <project path="packages/apps" name="WearOS-System-Apps"  remote="github"/>
+  <project path="packages/apps" name="WearOS-All-Apps"  remote="github"/>
   <!--<project path="packages/apps2" name="WearOS-Apps"  remote="github"/>-->
 </manifest>
