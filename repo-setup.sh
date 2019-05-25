@@ -5,7 +5,7 @@ NoTimeouts=false
 while [ "${1:-}" != "" ]; do
   case "$1" in
     "-n" | "--no-timeouts")
-      NoTimeouts=false
+      NoTimeouts=true
       ;;
   esac
   shift
