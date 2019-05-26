@@ -111,12 +111,13 @@ echo
 echo "Setting up build environment..."
 . build/envsetup.sh
 
-# Set Java max heap size to 8GB (or AOSP won't build/fail at ~40-80%)
+# Set Java max heap size to 7GB (or AOSP won't build/fail at ~40-80%)
 echo
 echo
 echo "Setting up Jack variables..."
-export ANDROID_JACK_VM_ARGS="-Xmx8G -Xms1G -Dfile.encoding=UTF-8 -XX:+TieredCompilation"
-export JACK_SERVER_VM_ARGUMENTS="-Xmx8G -Xms1G -Dfile.encoding=UTF-8 -XX:+TieredCompilation"
+export ANDROID_JACK_VM_ARGS="-Xmx7G -Xms1G -Dfile.encoding=UTF-8 -XX:+TieredCompilation"
+export SERVER_NB_COMPILE=6 # increase parallel jack compilations 4 -> 6
+export JACK_SERVER_VM_ARGUMENTS=$ANDROID_JACK_VM_ARGS
 
 # Restart the Jack server to use the new arguments
 echo
@@ -141,4 +142,4 @@ lunch full_dorado-userdebug
 echo
 echo
 echo "Building AOSP with $((`nproc`*8)) concurrent jobs..."
-m -j$((`nproc`*8))
+m -j$((`nproc`*3))
