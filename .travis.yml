@@ -2,9 +2,7 @@ language: c
 compiler: gcc
 
 os: linux
-dist: xenial
-
-sudo: false
+dist: trusty
 
 cache:
   apt: true
