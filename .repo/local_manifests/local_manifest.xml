@@ -63,7 +63,10 @@
   <remove-project name="platform/packages/apps/UnifiedEmail" />
 
   <remove-project name="platform/system/core" />
+  <remove-project name="platform/external/iw" />
 
   <project path="packages/apps" name="WearOS-All-Apps"  remote="github"/>
+
   <project path="system/core" name="platform_system_core"  remote="github"/>
+  <project path="external/iw" name="platform_external_iw"  remote="github"/>
 </manifest>
