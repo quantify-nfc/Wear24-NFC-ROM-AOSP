@@ -60,7 +60,7 @@ git config http.postBuffer 157286400
 echo 
 echo 
 timeout 4 "Installing AOSP requirements in %s seconds"
-sudo apt -y install git-core gnupg flex bison gperf build-essential zip curl ccache zlib1g-dev gcc-multilib g++-multilib libc6-dev-i386 lib32ncurses5-dev x11proto-core-dev libx11-dev lib32z-dev libgl1-mesa-dev libxml2-utils xsltproc unzip
+sudo apt -y install git-core gnupg flex bison gperf build-essential zip curl ccache zlib1g-dev gcc-multilib g++-multilib libc6-dev-i386 lib32ncurses5-dev x11proto-core-dev libx11-dev lib32z-dev libgl1-mesa-dev libxml2-utils xsltproc unzip >> /dev/null
 
 echo 
 echo 
@@ -78,7 +78,7 @@ repo init --depth 1 -b android-wear-7.1.1_r1 -u https://android.googlesource.com
 echo 
 echo
 timeout 4 "Synchronising local files with AOSP"
-repo sync -c --no-clone-bundle -j$((`nproc`*2))
+repo sync -c --no-clone-bundle -q -j$((`nproc`*2))
 
 echo
 echo
