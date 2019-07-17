@@ -51,7 +51,7 @@ if [ ! -d ".quantifyinit" ]; then
   
   # set up ccache, if it hasn't been set up already
     
-  if [ "$TRAVIS" == true ]; then
+  if [ "$CI" == true ]; then
     touch .quantifyinit/ccacheset
   else  
     if [ ! -f ".quantifyinit/ccacheset" ]; then
