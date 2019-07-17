@@ -1,0 +1,15 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/classic:latest
+
+    steps:
+      - checkout
+      - run:
+          name: Setup
+          command: |
+            ./repo-setup.sh -n
+      - run:
+          name: AOSP Build
+          command: ./build.sh
