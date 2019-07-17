@@ -47,8 +47,8 @@ if [[ $input == "N" || $input == "n" ]]; then
 else
   echo "Installing OpenJDK 8..."
   sudo add-apt-repository -y ppa:openjdk-r/ppa 
-  sudo apt -y update
-  sudo apt -y install openjdk-8-jdk
+  sudo apt -y -qq update
+  sudo apt -y -qq install openjdk-8-jdk
 fi
 
 echo
@@ -60,7 +60,7 @@ git config http.postBuffer 157286400
 echo 
 echo 
 timeout 4 "Installing AOSP requirements in %s seconds"
-sudo apt -y install git-core gnupg flex bison gperf build-essential zip curl ccache zlib1g-dev gcc-multilib g++-multilib libc6-dev-i386 lib32ncurses5-dev x11proto-core-dev libx11-dev lib32z-dev libgl1-mesa-dev libxml2-utils xsltproc unzip >> /dev/null
+sudo apt -y -qq install git-core gnupg flex bison gperf build-essential zip curl ccache zlib1g-dev gcc-multilib g++-multilib libc6-dev-i386 lib32ncurses5-dev x11proto-core-dev libx11-dev lib32z-dev libgl1-mesa-dev libxml2-utils xsltproc unzip >> /dev/null
 
 echo 
 echo 
