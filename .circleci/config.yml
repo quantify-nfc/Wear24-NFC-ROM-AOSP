@@ -6,7 +6,11 @@ jobs:
 
     steps:
       - checkout
-      - run: export TERM=xterm
+      - run:
+          command: |
+            export TERM=xterm
+            git config user.email "test@example.com"
+            git config user.name "CircleCI"
       - run:
           name: Setup
           command: |
