@@ -5,13 +5,17 @@ os: linux
 dist: trusty
 
 cache:
-  apt: true
+  ccache: true
+  directories:
+    - ~/
 
 before_install:
 - wget https://raw.githubusercontent.com/davwheat/travis-ci-discord-webhook/master/send.sh
 - chmod +x *.sh
 - git config --global color.ui true
-- ./repo-setup.sh -n
+
+install:
+- ./repo-setup.sh -t
 - jdk_switcher use openjdk8
 
 addons:
