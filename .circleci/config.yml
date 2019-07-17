@@ -8,8 +8,6 @@ jobs:
       - checkout
       - run:
           command: |
-            sed -i 's#archive.ubuntu.com/ubuntu#ftp.heanet.ie/pub/ubuntu#g' /etc/apt/sources.list
-            sed -i 's#security.ubuntu.com/ubuntu#ftp.heanet.ie/pub/ubuntu#g' /etc/apt/sources.list
             git config user.email "test@example.com"
             git config user.name "CircleCI"
       - run:
