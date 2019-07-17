@@ -12,6 +12,7 @@ before_install:
 - chmod +x *.sh
 - git config --global color.ui true
 - ./repo-setup.sh -n
+- jdk_switcher use openjdk8
 
 addons:
   apt:
