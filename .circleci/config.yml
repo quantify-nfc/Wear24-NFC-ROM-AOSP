@@ -6,6 +6,7 @@ jobs:
 
     steps:
       - checkout
+      - run: export TERM=xterm
       - run:
           name: Setup
           command: |
