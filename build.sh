@@ -58,7 +58,7 @@ if [ ! -d ".quantifyinit" ]; then
       choice=25G
       echo -n "$choice$res" >> .quantifyinit/ccacheset
       ccache -M $choice
-      export CCACHE_COMPRESS=1 && echo -n "yes$res" >> .quantifyinit/ccacheset && echo "Enabled ccache compression.";;
+      export CCACHE_COMPRESS=1 && echo -n "yes$res" >> .quantifyinit/ccacheset && echo "Enabled ccache compression.";
     else
       export USE_CCACHE=1
       echo "ccache is enabled"
