@@ -3,9 +3,15 @@ jobs:
   build:
     machine:
       image: circleci/classic:latest
+      
+      
 
     steps:
       - checkout
+      - restore_cache:
+          keys:
+            - ccache-cache-cache
+            - repo
       - run:
           name: AOSP Build
           command: |
@@ -14,3 +20,12 @@ jobs:
             ./repo-setup.sh -n
             ./swap-file-setup.sh -n
             ./build.sh -n
+            git gc
+      - save_cache:
+          key: ccache-cache-cache
+          paths:
+            - "~/.ccache"
+      - save_cache:
+          key: repo
+          paths:
+            - "./"
