@@ -38,12 +38,19 @@ jobs:
           name: AOSP Build
           command: |
             ./build.sh -n
+            
+      # ADD DEPLOY STUFF HERE
+      # ADD DEPLOY STUFF HERE
+      # ADD DEPLOY STUFF HERE
+      # ADD DEPLOY STUFF HERE
+      
       # GC is disabled in Circle -- it is good to GC before caching source
       # https://circleci.com/docs/2.0/caching/#source-caching
       - run:
           name: Clean up
           command: |
             git gc
+            m clobber
       # Save cache
       - save_cache:
           key: ccache-cache-cache-v1-{{ .Branch }}-{{ .Revision }}
