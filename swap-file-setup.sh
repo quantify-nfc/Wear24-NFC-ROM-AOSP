@@ -26,10 +26,10 @@ sudo chmod 600 /16gswapfile
 sudo mkswap /16gswapfile
 sudo swapon /16gswapfile
 
-set -e
+set +e
 # Check the swap file was added
 sudo swapon --show
-set +e
+set -e
 
 # Make it permanent
 echo '/16gswapfile none swap sw 0 0' | sudo tee -a /etc/fstab
