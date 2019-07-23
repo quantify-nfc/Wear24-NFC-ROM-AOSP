@@ -50,7 +50,7 @@ jobs:
           name: Clean up
           command: |
             git gc
-            m clobber
+            make clobber
       # Save cache
       - save_cache:
           key: ccache-cache-cache-v1-{{ .Branch }}-{{ .Revision }}
