@@ -151,8 +151,19 @@ echo
 echo "Preparing dorado build..."
 lunch full_dorado-userdebug
 
+# Build kernel
+echo
+echo
+echo "Building Quantify kernel"
+cd kernel
+./build.sh
+
+# Copy built kernel to AOSP
+cd ..
+cp ./kernel/boot-image/zImage-dtb ./device/quanta/dorado-kernel/zImage-dtb
+
 # Build with (total cores * 3) concurrent jobs
 echo
 echo
 echo "Building AOSP with $((`nproc`*3)) concurrent jobs..."
-m -j$((`nproc`*3))
+m -j$((`nproc`*3)) &> logfile.txt && watch -n 3 tail -n 20 logfile.txt
