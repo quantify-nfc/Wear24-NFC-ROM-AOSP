@@ -1,0 +1,3 @@
+[submodule "kernel/build"]
+	path = kernel/build
+	url = https://github.com/quantify-nfc/Wear24-NFC-Kernel
