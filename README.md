@@ -2,7 +2,7 @@
 
 **THIS REPO IS STILL VERY VERY UNDER CONSTRUCTION**
 
-[![Build Status](https://travis-ci.com/quantify-nfc/Wear24-NFC-ROM-AOSP.svg?branch=android-wear-7.1.1_r1)](https://travis-ci.com/quantify-nfc/Wear24-NFC-ROM-AOSP)
+[![CircleCI](https://circleci.com/gh/quantify-nfc/Wear24-NFC-ROM-AOSP/tree/android-wear-7.1.1_r1.svg?style=svg)](https://circleci.com/gh/quantify-nfc/Wear24-NFC-ROM-AOSP/tree/android-wear-7.1.1_r1)
 
 This project is a modified mirror of Google's AOSP specifically targetted at the Quanta `dorado` (sold as the Verizon Wear24) to pair with our custom NFC kernel. Our aim is to get the watch to support NFC, a feature Verizon promised, yet never shipped. In the future, greater modifications may be made to support more features or update to newer systems such as Oreo or "H".
 

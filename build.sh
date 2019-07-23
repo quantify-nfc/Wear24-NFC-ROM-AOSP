@@ -52,8 +52,21 @@ if [ ! -d ".quantifyinit" ]; then
   
   # set up ccache, if it hasn't been set up already
     
-  if [ "$TRAVIS" == true ]; then
-    touch .quantifyinit/ccacheset
+  if [ "$CI" == true ]; then
+    if [ ! -f ".quantifyinit/ccacheset" ]; then
+      res="	"
+      export USE_CCACHE=1 && echo -n "yes$res" >> .quantifyinit/ccacheset
+      choice=25G
+      echo -n "$choice$res" >> .quantifyinit/ccacheset
+      ccache -M $choice
+      export CCACHE_COMPRESS=1 && echo -n "yes$res" >> .quantifyinit/ccacheset && echo "Enabled ccache compression.";
+    else
+      export USE_CCACHE=1
+      echo "ccache is enabled"
+      ccache -M $(cut -f2 .quantifyinit/ccacheset)
+      export CCACHE_COMPRESS=1
+      echo "ccache compression is enabled"
+    fi
   else  
     if [ ! -f ".quantifyinit/ccacheset" ]; then
       CCACHE_REGEX="[0-9][0-9][0-9]?[Gg]?[Bb]?"
@@ -144,8 +157,8 @@ echo
 echo "Preparing dorado build..."
 lunch full_dorado-userdebug
 
-# Build with (total cores * 8) concurrent jobs
+# Build with (total cores * 3) concurrent jobs
 echo
 echo
-echo "Building AOSP with $((`nproc`*8)) concurrent jobs..."
+echo "Building AOSP with $((`nproc`*3)) concurrent jobs..."
 m -j$((`nproc`*3))
