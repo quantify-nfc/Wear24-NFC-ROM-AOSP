@@ -162,6 +162,9 @@ cd kernel
 cd ..
 cp ./kernel/boot-image/zImage-dtb ./device/quanta/dorado-kernel/zImage-dtb
 
+# export built kernel path so AOSP doesn't build the default one
+export TARGET_PREBUILT_KERNEL=device/quanta/dorado-kernel/zImage-dtb
+
 # Build with (total cores * 3) concurrent jobs
 echo
 echo
