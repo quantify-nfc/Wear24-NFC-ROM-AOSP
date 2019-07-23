@@ -35,6 +35,7 @@ echo "Special thanks to lexri for helping us with everything else"
 echo "Thanks to bensdeals for your kind donation!"
 echo "And Quanta/AOSP, I suppose :')"
 echo "---------------------------------------------------"
+
 if [ ! -d ".quantifyinit" ]; then
   echo "Running through init..."
   mkdir .quantifyinit
@@ -98,7 +99,7 @@ if [ ! -d ".quantifyinit" ]; then
       fi # cut match
     fi # ccacheset exists
   fi # travis build
-else # .quantifyinit doesn't exist
+else # .quantifyinit does exist, don't overwrite
   if [ "$(cut -f1 .quantifyinit/ccacheset)" == "yes" ]; then
     export USE_CCACHE=1
     echo "ccache is enabled"
@@ -109,6 +110,11 @@ else # .quantifyinit doesn't exist
     echo "ccache compression is enabled"
   fi
 fi
+
+echo "Starting kernel build"
+cd kernel/build
+./build.sh
+cd ../../
 
 # Building on Ubuntu 18.04 causes an issue with the flex prebuilt package
 # This fixes it for some strange reason that none of us question because it lets us build AOSP :)

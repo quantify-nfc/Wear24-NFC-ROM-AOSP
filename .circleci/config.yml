@@ -17,12 +17,6 @@ jobs:
             - ccache-cache-cache-v1-{{ .Branch }}-
             - ccache-cache-cache-v1-
             - ccache-cache-cache
-      - restore_cache:
-          keys:
-            - repo-v1-{{ .Branch }}-{{ .Revision }}
-            - repo-v1-{{ .Branch }}-
-            - repo-v1-
-            - repo
       # Checkout new change(s) not in cache
       - checkout
       # Set git identifiers and set up repo and swap
@@ -56,7 +50,3 @@ jobs:
           key: ccache-cache-cache-v1-{{ .Branch }}-{{ .Revision }}
           paths:
             - "~/.ccache"
-      - save_cache:
-          key: repo-v1-{{ .Branch }}-{{ .Revision }}
-          paths:
-            - "./"
