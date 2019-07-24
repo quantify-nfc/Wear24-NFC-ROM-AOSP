@@ -31,7 +31,7 @@ jobs:
       - run:
           name: Kernel Sync
           command: |
-            repo sync -c --no-clone-bundle -q --force-sync kernel/ -j$((`nproc`*2))
+            repo sync -c --no-clone-bundle -q --force-sync kernel -j$((`nproc`*2))
       # Run build script
       - run:
           name: AOSP Build
