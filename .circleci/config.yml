@@ -28,7 +28,10 @@ jobs:
             ./repo-setup.sh -n
             ./swap-file-setup.sh -n
       # Force sync kernel files
-      - run: repo sync -c --no-clone-bundle -q --force-sync kernel/ -j$((`nproc`*2))
+      - run:
+          name: Kernel Sync
+          command: |
+            repo sync -c --no-clone-bundle -q --force-sync kernel/ -j$((`nproc`*2))
       # Run build script
       - run:
           name: AOSP Build
