@@ -27,6 +27,8 @@ jobs:
             git config user.name "CircleCI"
             ./repo-setup.sh -n
             ./swap-file-setup.sh -n
+      # Force sync kernel files
+      - run: repo sync -c --no-clone-bundle -q --force-sync kernel/ -j$((`nproc`*2))
       # Run build script
       - run:
           name: AOSP Build
