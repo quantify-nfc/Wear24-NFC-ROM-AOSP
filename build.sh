@@ -157,8 +157,25 @@ echo
 echo "Preparing dorado build..."
 lunch full_dorado-userdebug
 
+# Build kernel
+echo
+echo
+echo "Building Quantify kernel, logs can be found at kernel/kernelbuild.log"
+cd kernel
+rm kernelbuild.log
+./build.sh | tee -a kernelbuild.log
+
+# Copy built kernel to AOSP
+cd ..
+cp ./kernel/boot-image/zImage-dtb ./device/quanta/dorado-kernel/zImage-dtb
+
+# export built kernel path so AOSP doesn't build the default one
+export TARGET_PREBUILT_KERNEL=device/quanta/dorado-kernel/zImage-dtb
+
 # Build with (total cores * 3) concurrent jobs
 echo
 echo
 echo "Building AOSP with $((`nproc`*3)) concurrent jobs..."
-m -j$((`nproc`*3))
+echo "Build log can be found at aospbuild.log"
+rm aospbuild.log
+m -j$((`nproc`*3)) | tee -a aospbuild.log
