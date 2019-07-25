@@ -160,14 +160,14 @@ lunch full_dorado-userdebug
 # Build kernel
 echo
 echo
-echo "Building Quantify kernel, logs can be found at kernel/kernelbuild.log"
-cd kernel
+echo "Building Quantify kernel, logs can be found at kernelbuild.log"
+cd kernel/build
 rm kernelbuild.log
-./build.sh | tee -a kernelbuild.log
+./build.sh | tee -a ../../kernelbuild.log
 
 # Copy built kernel to AOSP
-cd ..
-cp ./kernel/boot-image/zImage-dtb ./device/quanta/dorado-kernel/zImage-dtb
+cd ../..
+cp ./kernel/build/boot-image/zImage-dtb ./device/quanta/dorado-kernel/zImage-dtb
 
 # export built kernel path so AOSP doesn't build the default one
 export TARGET_PREBUILT_KERNEL=device/quanta/dorado-kernel/zImage-dtb

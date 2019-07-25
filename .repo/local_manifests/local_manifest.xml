@@ -70,6 +70,5 @@
   <project path="system/core" name="platform_system_core"  remote="github"/>
   <project path="external/iw" name="platform_external_iw"  remote="github"/>
 
-  <remove-project name="platform/kernel/tests" />
-  <project path="kernel/" name="Wear24-NFC-Kernel"  remote="github"/>
+  <project path="kernel/build" name="Wear24-NFC-Kernel"  remote="github"/>
 </manifest>
