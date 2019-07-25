@@ -2,3 +2,5 @@
 .quantifyinit/
 out/
 packages/apps/
+
+**/*.*~
