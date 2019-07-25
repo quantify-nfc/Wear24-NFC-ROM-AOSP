@@ -26,12 +26,8 @@ jobs:
             git config user.email "test@example.com"
             git config user.name "CircleCI"
             ./repo-setup.sh -n
-            ./swap-file-setup.sh -n
-      # Force sync kernel files
-      - run:
-          name: Kernel Sync
-          command: |
             repo sync -c --no-clone-bundle -q --force-sync kernel -j$((`nproc`*2))
+            ./swap-file-setup.sh -n
       # Run build script
       - run:
           name: AOSP Build
