@@ -58,7 +58,7 @@ if [ ! -d ".quantifyinit" ]; then
       export USE_CCACHE=1 && echo -n "yes$res" >> .quantifyinit/ccacheset
       choice=25G
       echo -n "$choice$res" >> .quantifyinit/ccacheset
-      ccache -M $choice
+      prebuilts/misc/linux-x86/ccache/ccache -M $choice
       export CCACHE_COMPRESS=1 && echo -n "yes$res" >> .quantifyinit/ccacheset && echo "Enabled ccache compression.";
     else
       export USE_CCACHE=1
@@ -84,7 +84,7 @@ if [ ! -d ".quantifyinit" ]; then
           choice=${choice%G*} # delete any characters starting with G
           choice=${choice}G
           echo -n "$choice$res" >> .quantifyinit/ccacheset
-          ccache -M $choice
+          prebuilts/misc/linux-x86/ccache/ccache -M $choice
           read -p "Enable compression (y/n)? " choice
           case "$choice" in
             y|Y ) export CCACHE_COMPRESS=1 && echo -n "yes$res" >> .quantifyinit/ccacheset && echo "Enabled ccache compression.";;
@@ -103,7 +103,7 @@ else # .quantifyinit does exist, don't overwrite
   if [ "$(cut -f1 .quantifyinit/ccacheset)" == "yes" ]; then
     export USE_CCACHE=1
     echo "ccache is enabled"
-    ccache -M $(cut -f2 .quantifyinit/ccacheset)
+    prebuilts/misc/linux-x86/ccache/ccache -M $(cut -f2 .quantifyinit/ccacheset)
   fi
   if [ "$(cut -f3 .quantifyinit/ccacheset)" == "yes" ]; then
     export CCACHE_COMPRESS=1
