@@ -44,4 +44,3 @@ echo
 echo
 timeout 4 "Updating repo submodules..."
 repo sync -c --no-clone-bundle -q -j$((`nproc`*2))
-repo sync -c --no-clone-bundle -q --force-sync kernel/ -j$((`nproc`*2))
