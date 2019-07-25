@@ -184,5 +184,5 @@ rm aospbuild.log
 make dist DIST_DIR=dist_output -j$((`nproc`*3)) | tee -a aospbuild.log
 
 # Construct OTA package
-./build/tools/releasetools/ota_from_target_files dist_output/dorado-target_files.zip ota_update.zip
+./build/tools/releasetools/ota_from_target_files dist_output/full_dorado-target_files-eng.*.zip ota-update.zip
 
