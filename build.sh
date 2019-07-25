@@ -145,11 +145,11 @@ echo "Restarting Jack server"
 ./prebuilts/sdk/tools/jack-admin kill-server
 ./prebuilts/sdk/tools/jack-admin start-server
 
-# Make clobber (because why not)
-echo
-echo
-echo "Cleaning up directory..."
-m clobber
+# don't Make clobber (because why ~not~)
+#echo
+#echo
+#echo "Cleaning up directory..."
+#m clobber
 
 # Select the dorado product
 echo
