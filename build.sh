@@ -2,12 +2,21 @@
 set -e
 
 NoTimeouts=false
+dist=false
 
 while [ "${1:-}" != "" ]; do
   case "$1" in
     "-n" | "--no-timeouts")
       NoTimeouts="true"
       ;;
+  esac
+  shift
+done
+
+while [ "${1:-}" != "" ]; do
+  case "$1" in
+    "-d" | "--dist")
+      dist=true
   esac
   shift
 done
@@ -179,3 +188,8 @@ echo "Building AOSP with $((`nproc`*3)) concurrent jobs..."
 echo "Build log can be found at aospbuild.log"
 rm aospbuild.log
 m -j$((`nproc`*3)) | tee -a aospbuild.log
+
+if [ $dist = true ]; then
+echo "Creating distribution files..."
+m -j$((`nproc`*3)) dist | tee -a aospbuild.log
+./build/tools/releasetools/ota_from_target_files out/dist/full_dorado-target_files-eng.*.zip ota_update.zip
