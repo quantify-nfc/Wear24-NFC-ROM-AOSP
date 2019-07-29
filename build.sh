@@ -2,21 +2,20 @@
 set -e
 
 NoTimeouts=false
-dist=false
+DistBuild=false
+SkipKernelBuild=false
 
 while [ "${1:-}" != "" ]; do
   case "$1" in
     "-n" | "--no-timeouts")
-      NoTimeouts="true"
+      NoTimeouts=true
       ;;
-  esac
-  shift
-done
-
-while [ "${1:-}" != "" ]; do
-  case "$1" in
     "-d" | "--dist")
-      dist=true
+      DistBuild=true
+      ;;
+    "--skip-kernel")
+      SkipKernelBuild=true
+      ;;
   esac
   shift
 done
@@ -43,7 +42,16 @@ echo "Thanks to osm0sis (mkbootimg) & mkorenko (some dorado makefiles)"
 echo "Special thanks to lexri for helping us with everything else"
 echo "Thanks to bensdeals for your kind donation!"
 echo "And Quanta/AOSP, I suppose :')"
-echo "---------------------------------------------------"
+echo "----------------------------------------------------------------"
+
+if [ $DistBuild = true ]; then
+  echo
+  echo "**********************"
+  echo "*     DIST BUILD     *"
+  echo "**********************"
+fi
+
+timeout 5 "Starting in %s seconds."
 
 if [ ! -d ".quantifyinit" ]; then
   echo "Running through init..."
@@ -120,10 +128,15 @@ else # .quantifyinit does exist, don't overwrite
   fi
 fi
 
-echo "Starting kernel build"
-cd kernel/build
-./build.sh
-cd ../../
+if [ $SkipKernelBuild = false]; then
+  echo "Starting kernel build"
+  cd kernel/build
+  ./build.sh
+  cd ../../
+else
+  echo "Option \"--skip-kernel\" was passed.
+  echo "*** SKIPPING KERNEL BUILD ***"
+fi
 
 # Building on Ubuntu 18.04 causes an issue with the flex prebuilt package
 # This fixes it for some strange reason that none of us question because it lets us build AOSP :)
@@ -187,9 +200,12 @@ echo
 echo "Building AOSP with $((`nproc`*3)) concurrent jobs..."
 echo "Build log can be found at aospbuild.log"
 rm aospbuild.log
-m -j$((`nproc`*3)) | tee -a aospbuild.log
 
-if [ $dist = true ]; then
-echo "Creating distribution files..."
-m -j$((`nproc`*3)) dist | tee -a aospbuild.log
-./build/tools/releasetools/ota_from_target_files out/dist/full_dorado-target_files-eng.*.zip ota_update.zip
+if [ $DistBuild = true ]; then
+  echo "Creating distribution files..."
+  m -j$((`nproc`*3)) dist | tee -a aospbuild.log
+  echo "Compiling OTA update zip"
+  ./build/tools/releasetools/ota_from_target_files out/dist/full_dorado-target_files-eng.*.zip ota_update.zip
+else
+  m -j$((`nproc`*3)) | tee -a aospbuild.log
+fi
