@@ -10,7 +10,7 @@ while [ "${1:-}" != "" ]; do
     "-n" | "--no-timeouts")
       NoTimeouts=true
       ;;
-    "-d" | "--dist")
+    "-d" | "--dist" | "--ota")
       DistBuild=true
       ;;
     "--skip-kernel")
@@ -23,9 +23,9 @@ done
 timeout () {
   if [ "$NoTimeouts" == false ]; then
     tput sc
-    time=$1; while [ $time -ge 0 ]; do
+    time=$1; while [ "$time" -ge 0 ]; do 
       tput rc; tput el
-      printf "$2" $time
+      printf "$2" "$time"
       ((time--))
       sleep 1
     done
@@ -43,15 +43,6 @@ echo "Special thanks to lexri for helping us with everything else"
 echo "Thanks to bensdeals for your kind donation!"
 echo "And Quanta/AOSP, I suppose :')"
 echo "----------------------------------------------------------------"
-
-if [ $DistBuild = true ]; then
-  echo
-  echo "**********************"
-  echo "*     DIST BUILD     *"
-  echo "**********************"
-fi
-
-timeout 5 "Starting in %s seconds."
 
 if [ ! -d ".quantifyinit" ]; then
   echo "Running through init..."
@@ -80,7 +71,7 @@ if [ ! -d ".quantifyinit" ]; then
     else
       export USE_CCACHE=1
       echo "ccache is enabled"
-      ccache -M $(cut -f2 .quantifyinit/ccacheset)
+      ccache -M "$(cut -f2 .quantifyinit/ccacheset)"
       export CCACHE_COMPRESS=1
       echo "ccache compression is enabled"
     fi
@@ -88,7 +79,7 @@ if [ ! -d ".quantifyinit" ]; then
     if [ ! -f ".quantifyinit/ccacheset" ]; then
       CCACHE_REGEX="[0-9][0-9][0-9]?[Gg]?[Bb]?"
       res="	"
-      read -p "Use ccache to speed up builds (y/n)? " choice
+      read -r -p "Use ccache to speed up builds (y/n)? " choice
       case "$choice" in
         y|Y ) export USE_CCACHE=1 && echo -n "yes$res" >> .quantifyinit/ccacheset;;
         n|N ) echo "Did not set ccache" && touch .quantifyinit/ccacheset;;
@@ -96,13 +87,13 @@ if [ ! -d ".quantifyinit" ]; then
       esac
     
       if [ "$(cut -f1 .quantifyinit/ccacheset)" == "yes" ]; then
-        read -p "How much cache? (10-999GB) " choice
+        read -r -p "How much cache? (10-999GB) " choice
         if [[ $choice =~ $CCACHE_REGEX ]]; then
           choice=${choice%G*} # delete any characters starting with G
           choice=${choice}G
           echo -n "$choice$res" >> .quantifyinit/ccacheset
-          prebuilts/misc/linux-x86/ccache/ccache -M $choice
-          read -p "Enable compression (y/n)? " choice
+          prebuilts/misc/linux-x86/ccache/ccache -M "$choice"
+          read -r -p "Enable compression (y/n)? " choice
           case "$choice" in
             y|Y ) export CCACHE_COMPRESS=1 && echo -n "yes$res" >> .quantifyinit/ccacheset && echo "Enabled ccache compression.";;
             n|N ) echo "Did not enable compression";;
@@ -120,7 +111,7 @@ else # .quantifyinit does exist, don't overwrite
   if [ "$(cut -f1 .quantifyinit/ccacheset)" == "yes" ]; then
     export USE_CCACHE=1
     echo "ccache is enabled"
-    prebuilts/misc/linux-x86/ccache/ccache -M $(cut -f2 .quantifyinit/ccacheset)
+    prebuilts/misc/linux-x86/ccache/ccache -M "$(cut -f2 .quantifyinit/ccacheset)"
   fi
   if [ "$(cut -f3 .quantifyinit/ccacheset)" == "yes" ]; then
     export CCACHE_COMPRESS=1
@@ -128,13 +119,13 @@ else # .quantifyinit does exist, don't overwrite
   fi
 fi
 
-if [ $SkipKernelBuild = false]; then
+if [[ $SkipKernelBuild = false ]]; then
   echo "Starting kernel build"
   cd kernel/build
   ./build.sh
   cd ../../
 else
-  echo "Option \"--skip-kernel\" was passed.
+  echo "Option \"--skip-kernel\" was passed."
   echo "*** SKIPPING KERNEL BUILD ***"
 fi
 
@@ -143,6 +134,15 @@ fi
 export LC_ALL=C
 
 set +e
+
+
+if [ $DistBuild = true ]; then
+  echo
+  echo "**********************"
+  echo "*     DIST BUILD     *"
+  echo "**********************"
+  echo
+fi
 
 timeout 5 "AOSP build begins in %s seconds."
 
@@ -197,15 +197,15 @@ export TARGET_PREBUILT_KERNEL=device/quanta/dorado-kernel/zImage-dtb
 # Build with (total cores * 3) concurrent jobs
 echo
 echo
-echo "Building AOSP with $((`nproc`*3)) concurrent jobs..."
+echo "Building AOSP with $(($(nproc)*3)) concurrent jobs..."
 echo "Build log can be found at aospbuild.log"
 rm aospbuild.log
 
 if [ $DistBuild = true ]; then
   echo "Creating distribution files..."
-  m -j$((`nproc`*3)) dist | tee -a aospbuild.log
+  m -j$(($(nproc)*3)) dist | tee -a aospbuild.log
   echo "Compiling OTA update zip"
   ./build/tools/releasetools/ota_from_target_files out/dist/full_dorado-target_files-eng.*.zip ota_update.zip
 else
-  m -j$((`nproc`*3)) | tee -a aospbuild.log
+  m -j$(($(nproc)*3)) | tee -a aospbuild.log
 fi
