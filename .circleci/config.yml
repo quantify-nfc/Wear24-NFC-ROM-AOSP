@@ -4,8 +4,6 @@ jobs:
     machine:
       image: circleci/classic:latest
       
-      
-
     steps:
       # Restore cache
       # Cache is kept for 30 days (max)
@@ -21,6 +19,7 @@ jobs:
       - checkout
       # Set git identifiers and set up repo and swap
       - run:
+          no_output_timeout: "1h"
           name: Build Setup
           command: |
             git config user.email "test@example.com"
@@ -38,13 +37,6 @@ jobs:
       # ADD DEPLOY STUFF HERE
       # ADD DEPLOY STUFF HERE
       
-      # GC is disabled in Circle -- it is good to GC before caching source
-      # https://circleci.com/docs/2.0/caching/#source-caching
-      - run:
-          name: Clean up
-          command: |
-            git gc
-            make clobber
       # Save cache
       - save_cache:
           key: ccache-cache-cache-v1-{{ .Branch }}-{{ .Revision }}
