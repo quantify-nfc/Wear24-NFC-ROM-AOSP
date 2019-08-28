@@ -189,7 +189,7 @@ rm kernelbuild.log
 
 # Copy built kernel to AOSP
 cd ../..
-cp ./kernel/build/boot-image/zImage-dtb ./device/quanta/dorado-kernel/zImage-dtb
+cp ./kernel/build/out/boot-image/zImage-dtb ./device/quanta/dorado-kernel/zImage-dtb
 
 # export built kernel path so AOSP doesn't build the default one
 export TARGET_PREBUILT_KERNEL=device/quanta/dorado-kernel/zImage-dtb
