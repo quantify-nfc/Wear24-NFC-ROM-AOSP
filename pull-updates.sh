@@ -6,10 +6,6 @@ while [ "${1:-}" != "" ]; do
   case "$1" in
     "-n" | "--no-timeouts")
       NoTimeouts=true
-      ;;
-    "-t" | "--travis-build")
-      NoTimeouts=true
-      Travis=true
   esac
   shift
 done
