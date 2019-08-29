@@ -39,4 +39,4 @@ git pull -q
 echo 
 echo
 timeout 4 "Updating repo submodules..."
-repo sync -c --no-clone-bundle -q -j$((`nproc`*2))
+repo sync -f -c --no-clone-bundle -q -j$((`nproc`*2))
